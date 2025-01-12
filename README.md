@@ -65,6 +65,12 @@ After hours of testing different configurations for the power level calculations
 ![[Screenshot 2024-12-04 at 9.31.03 PM.png]]
 ![[Screenshot 2024-12-04 at 9.31.14 PM.png]]
 
+![Screenshot 2024-12-04 at 9.30.34 PM](Screenshot%202024-12-04%20at%209.30.34%20PM.png)
+![Screenshot 2024-12-04 at 9.30.44 PM](Screenshot%202024-12-04%20at%209.30.44%20PM.png)
+![Screenshot 2024-12-04 at 9.31.03 PM](Screenshot%202024-12-04%20at%209.31.03%20PM.png)
+![Screenshot 2024-12-04 at 9.31.14 PM](Screenshot%202024-12-04%20at%209.31.14%20PM.png)
+
+
 Now I just have to work out the drawing when timer ends bug, and refactor some of the DC logic, and I can finally put this on the shelf!
 
 Friday I will sit down and record the demo video. Very excited to move on to Git It Together. After I finish that, I think as a side passion project to keep my skills up while applying for jobs, I'll revisit my Desktop Pikmin desktop pet project.
