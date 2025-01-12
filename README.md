@@ -722,16 +722,17 @@ As on now I have no tutorials calling my attention. I may check out Wes Bos' wha
 
 
 # 04/09/24 - 
-Today marks 100 consecutive days of programming! I KNOW I am a much better programmer than I was 100 days ago, and it feels great! I hope to continue for a full year going forward.![[Screenshot 2024-09-04 at 5.20.27 PM.png]]
+Today marks 100 consecutive days of programming! I KNOW I am a much better programmer than I was 100 days ago, and it feels great! I hope to continue for a full year going forward.![Screenshot 2024-09-04 at 5.20.27 PM](Screenshot%202024-09-04%20at%205.20.27%20PM.png)
+
 
 Finished day 29 of the javascript30 challenge. Learned about timestamps, and made a timer application.
 
 I don't think I will be able to work on tank game today, not enough time in the day, but I did say I would describe the features of how the game is built, so:
 		I have finally decided how the shooting will work:
-		![[Screenshot 2024-09-03 at 5.47.44 PM.png]]
-		![[Screenshot 2024-09-03 at 5.50.50 PM.png]]
-		![[Screenshot 2024-09-03 at 6.00.36 PM.png]]
-		![[Screenshot 2024-09-04 at 5.59.14 PM 1.png]]
+![Screenshot 2024-09-03 at 5.47.44 PM](Screenshot%202024-09-03%20at%205.47.44%20PM.png)
+![Screenshot 2024-09-03 at 5.50.50 PM](Screenshot%202024-09-03%20at%205.50.50%20PM.png)
+![Screenshot 2024-09-03 at 6.00.36 PM](Screenshot%202024-09-03%20at%206.00.36%20PM.png)
+![Screenshot 2024-09-04 at 5.59.14 PM 1](Screenshot%202024-09-04%20at%205.59.14%20PM%201.png)
 		I have to define a maximum and minimum shot as well. 
 
 UPDATE: My girlfriend is dying her hair tonight so I have some extra time. It looks totally possible at a first glance to seamlessly integrate matter.js with the HTML5 canvas api. Very excited to see this come together. 
@@ -791,7 +792,7 @@ Finished day 23 of the javascript30 challenge. Interacted with the SpeechSynthes
 
 Got the second draft of tank game up and running. Shapes now fill in correctly, the canvas is static so it is unaffected by zoom, and I have a few placeholder buttons laid out for if I want to reset the drawing or concede the game. I am trying to figure out how to really determine what is the right amount of shapes to let the player draw, after all, if you just draw one big shape, what happens if there is not enough room to draw more?
 
-![[Screenshot 2024-08-22 at 9.04.59 PM 1.png]]
+![Screenshot 2024-08-22 at 9.04.59 PM 1](Screenshot%202024-08-22%20at%209.04.59%20PM%201.png)
 
 I'm thinking of solving this by giving the player a set amount of "ink" to work with, but I am hesitant because five shapes is how I have always played the game!
 
@@ -869,7 +870,7 @@ I have started researching html canvas fill(), and flood fill algorithms. I cann
 
 I have a LOT more work to do, but I feel I've made very good progress today.
 
-![[Screenshot 2024-08-16 at 5.29.47 PM.png]]
+![Screenshot 2024-08-16 at 5.29.47 PM](Screenshot%202024-08-16%20at%205.29.47%20PM.png)
 
 
 
@@ -935,7 +936,7 @@ CSS day!!!! Joined Wes Bos' flexbox course - flexbox.io. Also dove in to flexbox
 Finished flexbox froggy, though I had to cheat a little to figure out the last level. - https://flexboxfroggy.com/
 
 Working on styling css for the four main components of my JJs POS app. I now how four distinct sections for the ticket display, main window, sides, and navigation bar. The navigation bar and sides have buttons!
-![[Screenshot 2024-08-09 at 2.06.46 PM.png]]
+![Screenshot 2024-08-09 at 2.06.46 PM](Screenshot%202024-08-09%20at%202.06.46%20PM.png)
 
 Getting the flexbox right has been tedious. Soon will add styling to the buttons, and try to get them to all be evenly dispersed while maintaining the correct height and width of the containers they are in.
 
