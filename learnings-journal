@@ -40,7 +40,7 @@ I found out Django has a built in User model `from django.contrib.auth.models i
 Ran my first migration today, checked it out in Postico2.
 ![[Screenshot 2024-12-16 at 9.04.13 PM.png]]
 
-
+obsidian://open?vault=Obsidian%20Vault&file=Screenshot%202024-12-13%20at%2011.45.19%20AM.png
 # 11/12/24 - 
 started work on git it together db models
 
