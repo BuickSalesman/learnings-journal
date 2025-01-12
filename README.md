@@ -33,6 +33,7 @@ Today is my 200th day of at least one commit to GitHub per day! I'm very happy w
 
 ![Description](https://github.com/BuickSalesman/learnings-jounral/blob/main/Screenshot 2024-12-13 at 11.45.19 AM.png.png?raw=true)
 
+![Screenshot of the UI](Screenshot%202024-12-13%20at%2011.45.19%20AM.png)
 
 
 # 12/12/24 -
