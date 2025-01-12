@@ -31,16 +31,15 @@ As of right now, I have the basics done for all urls and GET/POST/PATCH/DELETE m
 # 13/12/24 -
 Today is my 200th day of at least one commit to GitHub per day! I'm very happy with this accomplishment. To commemorate this, I shared DPW and it's demo video in the Actualize Alumni Slack, and received a lot of positive feedback!
 
-![Description](https://github.com/BuickSalesman/learnings-jounral/blob/main/Screenshot 2024-12-13 at 11.45.19 AM.png.png?raw=true)
-
-![Screenshot of the UI](Screenshot%202024-12-13%20at%2011.45.19%20AM.png)
+![Screenshot](Screenshot%202024-12-13%20at%2011.45.19%20AM.png)
 
 
 # 12/12/24 -
 I found out Django has a built in User model `from django.contrib.auth.models import User`  which comes with several built in methods, built in ForeignKeys, but most importantly, hashes passwords automatically. Saves some time for me!
 
 Ran my first migration today, checked it out in Postico2.
-![[Screenshot 2024-12-16 at 9.04.13 PM.png]]
+
+![Screenshot](Screenshot%202024-12-16%20at%209.04.13%20PM.png)
 
 # 11/12/24 - 
 started work on git it together db models
