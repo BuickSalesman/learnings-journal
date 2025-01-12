@@ -60,11 +60,6 @@ got footage back from mr wolfe
 Oh my God I finally figured it out. 
 
 After hours of testing different configurations for the power level calculations, I figured out that the power level for the css and the power level for the server calculations we two different things, running the same math in two separate places at once. Instead of type out everything that I did here, I'll just post the slew of messages I sent to Jeff as I was working on it.
-![[Screenshot 2024-12-04 at 9.30.34 PM.png]]
-![[Screenshot 2024-12-04 at 9.30.44 PM.png]]
-![[Screenshot 2024-12-04 at 9.31.03 PM.png]]
-![[Screenshot 2024-12-04 at 9.31.14 PM.png]]
-
 ![Screenshot 2024-12-04 at 9.30.34 PM](Screenshot%202024-12-04%20at%209.30.34%20PM.png)
 ![Screenshot 2024-12-04 at 9.30.44 PM](Screenshot%202024-12-04%20at%209.30.44%20PM.png)
 ![Screenshot 2024-12-04 at 9.31.03 PM](Screenshot%202024-12-04%20at%209.31.03%20PM.png)
@@ -156,8 +151,8 @@ I wrote a script for the demonstration video which will be recorded soon, and I 
 Jeff and I also met earlier this week, and discussed out next project. I need to dig out the Actualize has-many belongs-to spreadsheet to work out the ins and outs of my database, but I am excited to get it started. 
 
 Here are some crude sketches of the beginnings of the project:
-![[Screenshot 2024-11-30 at 9.01.57 PM.png]]
-![[Screenshot 2024-11-30 at 9.02.03 PM.png]]
+![Screenshot 2024-11-30 at 9.01.57 PM](Screenshot%202024-11-30%20at%209.01.57%20PM.png)
+![Screenshot 2024-11-30 at 9.02.03 PM](Screenshot%202024-11-30%20at%209.02.03%20PM.png)
 
 I plan to use React for the front end, Django for the backend (I want to become more experienced with Python), and SQL for the database. Jeff also suggested MongoDB for the database, but I think I will be more comfortable with SQL.
 
@@ -208,7 +203,7 @@ I'm planning on deploying the game, "ready" or not, tomorrow with Jeff.
 # 16/11/24 -
 I spent the last couple of days working on decreasing opacity for ink usage, to make it look like you are running out of ink on the page. I like the idea in practice, but I think when we create bodies from the shapes, we need to make the entire path fully opaque. I think I'll go ahead and do that and then start work on my big refactor.
 
-![[Screenshot 2024-11-16 at 10.48.08 AM.png]]
+![Screenshot 2024-11-16 at 10.48.08 AM](Screenshot%202024-11-16%20at%2010.48.08%20AM.png)
 
 What I ended up doing is on game state change into the battle phase, the shapes get retraced will full opacity. This provides a nice way to show that the player is running out of drawing pixels, but doesn't affect the overall aesthetic of the game board negatively. 
 
@@ -289,12 +284,12 @@ I read up on Kenji through his Wikipedia article, and I have to say I admire him
 
 An anecdote I found interesting from his Wikipedia was that although he was learned in the natural sciences (as much as someone could be in the early 1900's), he ended up failing at producing better harvest for the farmers he admired so much. They often sneered and snickered at the idea of a "city slicker" teaching them how to properly farm. He advocated for the use of natural fertilizers, as opposed to the preferred western chemical fertilizers. Of course we now understand that over time altering the environment too drastically from it's natural state disrupts the delicate balance of the living web that is the surrounding ecosystem. While there is no such thing as an inherently "better" fertilizer, chemical or natural, I believe he had the right idea in mind to farm along side the natural pattern of the environment. Had he had the botanical knowledge we have today, maybe he would have been more successful in his techniques.  
 
-![[Miyazawa_Kenji.jpg]]
+![Miyazawa Kenji](Miyazawa_Kenji.jpg)
 
 ### Back to DPW!
 I have finally implemented the long await "tracks in the sand" that gives the pen and paper game a distinct look! It really helps drive home the pen and paper aesthetic of the digital version. In the digital game, the tracks gradually disappear with each movement a tank takes. In the paper version of the game, the whole battlefield would become scribbled over with movement tracks, which was always a gripe of mine! Here's a quick demo video!
 
-![[Screen Recording 2024-11-07 at 8.21.38 AM (1).mov]]
+```video not supported in md :(```
 
 I realized today that the way I implemented force calculation in the new version of the game is slightly different from my single page application mock-up. In the mock up, a value was calculated based on the exact level from the incrementing power meter. In the new version of the game, it is based off of time held down by the mouse. This means that the longer you hold down the mouse, the further the tank goes, to infinity. So I implemented a power cap! The tank now automatically releases after 1.2 seconds. I played around with the client side code to match the incrementation of the power meter to this 1.2 second climb. 
 
@@ -316,7 +311,7 @@ Lastly, I added a color difference for tanks who have been hit. They change from
 # 05/11/24 - 
 I made a new file to work on moving the tanks around in, got the basics up and running. I also added shooting using some of the same logic.
 
-![[Screen Recording 2024-11-05 at 4.24.27 PM.mov]]
+```video not supported in md :(```
 
 I tried to validate a few things in the server with this logic, I was successful at validating time held down b eing equal to force in the server, but I wasn't able to validate disabling the context menu for mouse events in the server.
 
@@ -336,15 +331,15 @@ It's very interesting (and a bit frustrating, but a sign of progress) to me that
 
 I started with fixing the mirroring and flipping sequence for drawn shapes after inserting the fortresses, other matter bodies, and no draw zones. 
 
-![[Screenshot 2024-11-04 at 11.09.39 AM.png]]
+![Screenshot 2024-11-04 at 11.09.39 AM](Screenshot%202024-11-04%20at%2011.09.39%20AM.png)
 
 The above images showcases how the drawings represented themselves before I fixed the error. The below video shows how it works after I fixed it!
 
-![[Screen Recording 2024-11-04 at 11.14.56 AM.mov]]
+```video not supported in md :(```
 
 Does the above video seem off to you in any way, dear reader?
 
-![[scream-toad.gif]]
+![scream-toad](scream-toad.gif)
 
 I immediately realized that while the drawings were accurately flipped and mirrored, THE CANVAS ITSELF (including all Matter bodies) WAS NOT. Only the colors of the Matter objects were inverted, based on player number. 
 
@@ -358,7 +353,7 @@ After that, I went to work implementing boundary procedures for all of the vario
 
 Finally, after all this time! WE CAN MOVE ON TO CREATING MATTER BODIES OUT OF SHAPES. Thankfully, my old code for creating a small Matter.js circle body along every point int he drawing path, integrated seamlessly, and now, we have this:
 
- ![[Screen Recording 2024-11-04 at 3.34.17 PM.mov]]
+```video not supported in md :(```
 Now I think it's time to finally tackle movement systems. I just need to decide if I want to work out a few bugs with drawing first, or keep chugging along at the basic systems. I'll update this entry soon with what I decide. 
 
 
@@ -367,7 +362,7 @@ Now I think it's time to finally tackle movement systems. I just need to decide 
 I thought i finally implemented overlap protection on the server today in PDW, until I realized that shapes are being tracked on both sides of the board - so to speak.
 
 Here is this effect illustrated:
-![[Screenshot 2024-11-01 at 6.32.56 PM.png]]
+![Screenshot 2024-11-01 at 6.32.56 PM](Screenshot%202024-11-01%20at%206.32.56%20PM.png)
 
 I think right now that something along the lines of overlap checking before mirroring is happening, since shapes are validated on the server. I'm going to dig into this more and update this journal with what I find out!
 
@@ -386,14 +381,14 @@ Met with Jeff today for over two hours to work on my project. Explaining how my 
 # 28/10/24 - 
 After much trial and error on trying to implement shape overlap detection in my current code, I decided to go ahead and create a new mock server and mock client and cut out all the code that was getting in the way. I set out to create code that would detect if a line was over a certain pixel length, and then erase it from both clients if it was over that length, while maintaining all legal lines in the process. I now have this up and running which I am very happy about, and the code is a lot more secure from malicious clients, being very server focused. I intend to build off of this into full overlap detection over the next few days.
 
-![[Screen Recording 2024-10-28 at 9.27.30 PM 1.mov]]
+```video not supported in md :(```
 
 
 
 # 27/10/24 - 
 I spent a long time today combing through all of the different files I had created for various feature of DPW, and combining them into one file that functions correctly. At first I used the compare selected files feature built into VS Code, but it proved to be a little too messy, and I ended up creating a new file from scratch to compile all of my different features into. I did this both for client and server side. At the end of the day, we now have support for multiple game rooms, a Matter world running in each room, all of the Matter objects rendered on the canvas, the canvas flipped and mirrored in each game room, and the ability to draw five shapes in each room. Next I will be tackling shape intersections. This code was complicated in the single page application, and it proving to be even more complicated to validate across a server. I have tried three or four times now to make it work to no avail. 
 
-![[Screen Recording 2024-10-27 at 6.09.11 PM.mov]]
+```video not supported in md :(```
 
 
 
@@ -425,19 +420,19 @@ Additionally, I would like a total disconnect to result in the game room being c
 # 18/10/24 - 
 We have game rooms! It's a big coding day today, so I'll be updating the journal periodically as I make progress.
 
-![[Screen Recording 2024-10-18 at 8.05.05 AM.mov]]
+```video not supported in md :(```
 
 My first day coding with socket.io was NOT fun, but I do have something to show for my work. 
 I was able to set a html canvas based on screen size for each player, and have the bodies and dividing line and Matter world for each player relative to that screen size, which you can change on widow resize in real time. It even works across multiple game rooms and different devices! I broke out the iOS Simulator for this one. Gravity is turned on in the video for demonstration purposes, with opposing x,y values.
 
-![[Screen Recording 2024-10-18 at 3.59.13 PM.mov]]
+```video not supported in md :(```
 
 
 
 # 16/10/24 - 
 I got a prototype of a server up and running in a mock project! I had to initialize the Matter world on the server side, as having two clients with their own engines, renderers, and runners, pretty quickly led to asynchronous behavior among da ballz. After fixing that, we are left with this:
 
-![[Screen Recording 2024-10-16 at 4.48.07 PM.mov]]
+```video not supported in md :(```
 
 Jeff suggested making a file that denoted everything that actually happens in a game, so I can pick apart what needs to happen on the server, and what needs to happen on the client. So I guess that's what I'll do next, and hopefully start really digging into the code on Friday, when I'm off work.
 
@@ -464,12 +459,12 @@ I cannot wait to show Jeff and start implement socket.io. I am debating whether 
 
 In honor of all of this, here is a video of the full game in action:
 
-![[Screen Recording 2024-10-11 at 3.34.52 PM.mov]]
+```video not supported in md :(```
 
 
 # 10/10/24 - 
 I added a wobble animation to the tanks so that you can tell if you're clicking on one or not! This makes me happy. 
-![[Screen Recording 2024-10-10 at 3.33.59 PM.mov]]
+```video not supported in md :(```
 
 I also implemented a no draw zone around the fortress, and player turns in the pre game phase for drawing, so player 1 can draw 5 shapes below the dividing line, and player 2 can draw shapes above the dividing line. ![[Screen Recording 2024-10-10 at 6.03.00 PM.mov]]
 I also changed the max ink per shape limit to be based on the window size, so that smaller screens don't have an obscene amount of ink. 
@@ -521,22 +516,22 @@ I have decided to implement both a maximum number of shapes at 5, and a maximum 
 
 # 04/10/24 -
 Got up early and combined all the separate script files for the drawing and a movement that I've been working on, so now the bones are all together!
-![[Screen Recording 2024-10-04 at 9.17.01 AM.mov]]
+```video not supported in md :(```
 
 Shape drawing is still janky, the most annoying bug is that they are offset sometimes from where you draw them, which you can see in the video above. Sometimes they also don't render if you draw something Matter doesn't like, and every so often they fly up to the top left corner of the screen. Still not super sure how this works. 
 
 I've figured out that the offset is caused by having the shape broken down into less complex polygons, each with their own centroid. Each centroid is (I guess) averaged together to create the centroid of the body, which can offset it from the HTML canvas centroid. It works perfectly with simple shapes. 
 
-![[Screen Recording 2024-10-04 at 3.06.50 PM.mov]]
+```video not supported in md :(```
 At this point I'm VERY tempted to just save each point in the drawing path, and make a small circle 
 
-HELL YES IT WORKED I AM THE BEST ![[70oBBD-QislQIyiVpiaLfO9Ry6k=.gif]]
+HELL YES IT WORKED I AM THE BEST ![70oBBD-QislQIyiVpiaLfO9Ry6k=](70oBBD-QislQIyiVpiaLfO9Ry6k=.gif)
 I replaced bodies made from vertices with bodies made OF vertices. Now I make a small circle body on every point in the line, (using Bresenham's line algorithm). Now the drawing works perfectly. 
 
 I need to next update my collision events so that any collision of a body with the drawn shapes makes the moving body static, thus preventing clipping of shells through shapes.
 
 As a reward for my genius, I added explosions:
-![[Screen Recording 2024-10-04 at 5.22.53 PM.mov]]
+```video not supported in md :(```
 
 
 
@@ -576,7 +571,7 @@ I need to figure out how to either make shapes with intersecting lines, clear in
 
 Shapes are looking pretty complex!
 
-![[Screenshot 2024-09-28 at 9.06.24 PM.png]]
+![Screenshot 2024-09-28 at 9.06.24 PM](Screenshot%202024-09-28%20at%209.06.24%20PM.png)
 
 ChatGPT suggested that it might be feasible to find the convex hull of a shape, and remove all of the intersecting lines within the boundary of that hull before passing it to decomp, using something called  Graham’s scan or Andrew’s monotone chain.
 
@@ -597,27 +592,27 @@ I couldn't implement collision logic today, that's still on the to-do list. Trie
 
 I fixed some of the drawing logic. It seems that I can draw points and push them into an array. The `Bodies.fromVertices()` Matter method seems to connect all the vertices of my line, find a center point, and then connect all of the furthest points of the line from that center point. In the examples below, I had the center point of the body set to populate at the center of the map, but as you will soon see, I made that a little bit cleaner by the end of the day. 
 
-![[Screenshot 2024-09-27 at 5.29.00 PM.png]]
+![Screenshot 2024-09-27 at 5.29.00 PM](Screenshot%202024-09-27%20at%205.29.00%20PM.png)
 
-![[Screenshot 2024-09-27 at 5.28.48 PM.png]]
+![Screenshot 2024-09-27 at 5.28.48 PM](Screenshot%202024-09-27%20at%205.28.48%20PM.png)
 
-![[Screenshot 2024-09-27 at 5.28.30 PM.png]]
+![Screenshot 2024-09-27 at 5.28.30 PM](Screenshot%202024-09-27%20at%205.28.30%20PM.png)
 
-![[Screenshot 2024-09-27 at 5.28.15 PM.png]]
+![Screenshot 2024-09-27 at 5.28.15 PM](Screenshot%202024-09-27%20at%205.28.15%20PM.png)
 
 Every time I generated a body from a drawing, I would get this message in the console. 
-![[Screenshot 2024-09-27 at 5.31.08 PM.png]]
+![Screenshot 2024-09-27 at 5.31.08 PM](Screenshot%202024-09-27%20at%205.31.08%20PM.png)
 I think that will fix the problems with how the shapes are fleshed out. Worth a shot, anyway. So I will look into that soon. 
 
 I also completely refactored my entire codebase today and IT'S SO CLEAN NOW I LOVE IT.
-![[Screenshot 2024-09-27 at 6.10.32 PM.png]]
+![Screenshot 2024-09-27 at 6.10.32 PM](Screenshot%202024-09-27%20at%206.10.32%20PM.png)
 (okay I rounded up a little on the lines of code)
 
 I have distinct regions for all of my bits of code, and regions within those regions to keep things organized for me. It's soooooo much easier to navigate now. 
 
 Here's a small demonstration video of the whole thing put together and working! I can't wait to make more progress on this!
 
-![[Screen Recording 2024-09-27 at 5.56.14 PM.mov]]
+```video not supported in md :(```
 
 I also game across a new JavaScript built in: .find(), which is like filter(), but only returns the first value it finds in a dataset that matches a certain condition.
 
@@ -637,7 +632,7 @@ As a side note, Hurricane Helene is plowing through Atlanta right now. I'm excit
 # 25/09/24 -
 I probably won't be doing that much coding today, but I've reached a critical point in Tank Game, where I have to tear a few things apart and smash them back together. 
 
-![[Screenshot 2024-09-24 at 5.14.37 PM.png]]
+![Screenshot 2024-09-24 at 5.14.37 PM](Screenshot%202024-09-24%20at%205.14.37%20PM.png)
 
 I've starting reading The Non-Designer's Design Book, by Robin Williams. It's a quick read about C.R.A.P design (Contrast, Repetition, Alignment, and Proximity), and it's been very informative so far. I've made it through the first unit on proximity, and I really enjoy how she gives many examples on how to train your eye on the four principles, over and over again. Additionally, I've started my delve into Plant Systematic by Michael G. Simpson, a book on land plant systematics, as well as general evolution and biology. It is incredibly information dense, and I am so excited to really get my hands on some real botany material. 
 
@@ -656,8 +651,7 @@ I'm also finally finished reading Charles Petzold's CODE, after which I have a b
 I now realize that `Events.on(lorem ipsum)` does not mean "turn events on for this event", but rather "on this event". Makes so much more sense to me now. 
 
 I didn't work on tank game yesterday, so today I had lost a little inertia on the project. It took a few hours of avoiding it, but I finally sat down and wrote some code. I have written code to increase the power meter and apply force to the tank if the mouse press is within the boundaries of the tank. I also utilized `Math.min()` to be able to increment the power level in whatever increment I see fit (still tweaking for good feeling), but still have the maximum power level not exceed 100. It was affecting the css, and pushing the red bar outside of the outline of the power meter. Here's a quick video showcasing what I've done:
-![[Screen Recording 2024-09-12 at 7.55.26 PM.mov]]
-
+```video not supported in md :(```
 I guess now I am moving on to applying friction to the tank and ground, because I hate how slidey it is, and then we are moving on to integrating shapes and player turns, and then finally two player connection via socket.io! Very excited!
 
 As a side note, here's a cool site I learned about today: https://www.shopyourtv.com/. A site that allows you to pick a character and scene from your favorite tv show, and find the items of clothing they wore as an outfit online!
@@ -680,7 +674,7 @@ Played around with a few mouse events in Matter.js, they seem pretty straightfor
 I have decided to take a page out of Hearthstone's book and make aesthetic and interactable doo-dads on the sides of the canvas. Going to make separate notes on what some good ideas for doo-dads are.
 
 Met with Jeff today, and showed him the progress on tank game. We had a ton of fun exploring it. Modified an import statement to work a little clearer, and bounced ideas around on how the power meter should work. The way I have it set up is not very efficient, and I found out Matter.js can render bodies and objects straight into DOM elements, instead of only on a canvas. Can't wait to work on this tomorrow! 
-![[Screenshot 2024-09-10 at 9.51.51 PM.png]]
+![Screenshot 2024-09-10 at 9.51.51 PM](Screenshot%202024-09-10%20at%209.51.51%20PM.png)
 
 
 
@@ -699,7 +693,7 @@ Rebuilt tank game from the ground up with no help from any gpt. Wanted to fully 
 I has a realization that I will have to have the two players screens on their respective monitors the same orientation, i.e. they both draw their starting shapes on the bottom of the map, and move upwards to try and beat their opponent. It just feels better that way, but I have no idea how to go about it yet.
 
 Here is a small video of how the game looks now, rebuilt from scratch:
-![[Screen Recording 2024-09-09 at 7.07.05 PM.mov]]
+```video not supported in md :(```
 This mouse listener has a very low stiffness, and you can see the guiding lines connecting the cursor and the tank body.
 
 A challenge I encountered today was making the background of the Matter.js canvas transparent, I eventually figured out I just needed to set the background variable to null, which is the same thing I did with the tank, and then added the outline.
@@ -715,8 +709,7 @@ In the Coding Train videos I watched, he used p5.js as a renderer instead of the
 
 For a bit, it felt like I spent a ton of time getting almost nothing done, but at the end of the day, I have an object, solid borders on the canvas, and the ability to move the object around as I please with the arrow keys of the keyboard. That's progress!
 
-![[Screen Recording 2024-09-06 at 6.03.58 PM 1.mov]]
-
+```video not supported in md :(```
 
 
 # 05/09/24 - 
