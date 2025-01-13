@@ -5,6 +5,9 @@ Today I also worked on git=it-together, and turned the signup and login menus in
 
 I also found out about https://coolors.co/, a color palette generator, that also allows you to upload images and choose palettes based of the image. I did this to nail down GitHubs color scheme, so that I can better include that color scheme into git-it-together. 
 
+Lastly, I found this JavaScript Library to create calendars and populate them with data, I may end up utilizing this in git-it-together.
+https://docs.anychart.com/Basic_Charts/Calendar_Chart
+
 
 
 # 10/01/25 -
