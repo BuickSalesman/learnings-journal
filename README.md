@@ -3,7 +3,7 @@ Over the last couple of days I have been polishing up my resume and my personal 
 
 Today I also worked on git=it-together, and turned the signup and login menus into dropdown forms. The styling is still a bit off, as they are extending the entire header component when they drop down, which I don't like. 
 
-I also found out about coolors.co, a color palette generator, that also allows you to upload images and choose palettes based of the image. I did this to nail down GitHubs color scheme, so that I can better include that color scheme into git-it-together. 
+I also found out about https://coolors.co/, a color palette generator, that also allows you to upload images and choose palettes based of the image. I did this to nail down GitHubs color scheme, so that I can better include that color scheme into git-it-together. 
 
 
 
