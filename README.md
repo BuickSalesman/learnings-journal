@@ -1,4 +1,13 @@
-# 10/1/25 -
+# 12/01/25 - 
+Over the last couple of days I have been polishing up my resume and my personal website to start applying for jobs. The website is almost done, I just need to add some screenshots of my various projects and update the links. Resume is looking much better too. 
+
+Today I also worked on git=it-together, and turned the signup and login menus into dropdown forms. The styling is still a bit off, as they are extending the entire header component when they drop down, which I don't like. 
+
+I also found out about coolors.co, a color palette generator, that also allows you to upload images and choose palettes based of the image. I did this to nail down GitHubs color scheme, so that I can better include that color scheme into git-it-together. 
+
+
+
+# 10/01/25 -
 It had been quite some time since I journaled, but I am back and better than ever! I finished DPW, I started on git-it-together, and have been doing some creative coding for fun on the side to polish my skills. 
 
 git-it-together is coming along nicely, I got the backend almost entirely done in Django, I also have authentication for users between front and beck so that's great. Now I just need to focus on getting the frontend together. 
