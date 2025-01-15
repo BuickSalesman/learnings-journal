@@ -265,31 +265,31 @@ Lastly, I tried to implement a sticky note that laid slightly over the game boar
 
 # 07/11/24 - 
 
-`Be not defeated by the rain, Nor let the wind prove your better.  
-`Succumb not to the snows of winter. Nor be bested by the heat of summer.  
+`Be not defeated by the rain, Nor let the wind prove your better.`
+`Succumb not to the snows of winter. Nor be bested by the heat of summer. ` 
   
-`Be strong in body. Unfettered by desire. Not enticed to anger. Cultivate a quiet joy.  
-`Count yourself last in everything. Put others before you.  
-`Watch well and listen closely. Hold the learned lessons dear.  
+`Be strong in body. Unfettered by desire. Not enticed to anger. Cultivate a quiet joy. ` 
+`Count yourself last in everything. Put others before you.  `
+`Watch well and listen closely. Hold the learned lessons dear.  `
   
-`A thatch-roof house, in a meadow, nestled in a pine grove's shade.  
+`A thatch-roof house, in a meadow, nestled in a pine grove's shade.  `
   
-`A handful of rice, some miso, and a few vegetables to suffice for the day.  
+`A handful of rice, some miso, and a few vegetables to suffice for the day.  `
   
-`If, to the East, a child lies sick: Go forth and nurse him to health.  
-`If, to the West, an old lady stands exhausted: Go forth, and relieve her of burden.  
-`If, to the South, a man lies dying: Go forth with words of courage to dispel his fear.  
-`If, to the North, an argument or fight ensues:  
-`Go forth and beg them stop such a waste of effort and of spirit.  
+`If, to the East, a child lies sick: Go forth and nurse him to health.  `
+`If, to the West, an old lady stands exhausted: Go forth, and relieve her of burden.  `
+`If, to the South, a man lies dying: Go forth with words of courage to dispel his fear.  `
+`If, to the North, an argument or fight ensues:  `
+`Go forth and beg them stop such a waste of effort and of spirit. `
   
-`In times of drought, shed tears of sympathy.  
-`In summers cold, walk in concern and empathy.  
+`In times of drought, shed tears of sympathy.  `
+`In summers cold, walk in concern and empathy.  `
   
-`Stand aloof of the unknowing masses:  
-`Better dismissed as useless than flattered as a "Great Man".  
+`Stand aloof of the unknowing masses:`
+`Better dismissed as useless than flattered as a "Great Man"`
   
-`This is my goal, the person I strive to become.
- `
+`This is my goal, the person I strive to become.`
+
 I found this poem by late Japanese poet Kenji Miyazawa today. It has resonated deeply within myself. The themes of humility and a simple, happy life, parallel with the ebb and flow of the natural world, helping others along the way, is something I feel is missing from the greater modern day society (at least the societal bubble I find myself in!). I found several translations of the poem, but I think I like this one best, and is one of the better translations across the 4 or 5 of them that I read.
 
 I read up on Kenji through his Wikipedia article, and I have to say I admire him a lot, although in the poem itself he states he would rather be useless to all than be considered a "Great Man".  He was a novelist, poet, wrote children's literature, as well as being an agricultural science teacher, cellist, devout Buddhist, and a utopian social activist. Being a writer, musician, scientist, (I forgot to mention) artist, paired with a social philosophy of humility and non-consumerism, is just about the most respectable type of person I can image. 
