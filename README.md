@@ -1,3 +1,16 @@
+# 16/01/25 -
+Today I learned a little bit more about input types in forms. I started to make a form in React to eventually be imported into a modal that pops up when the new repo button is clicked. I had to exit my backend logic from:
+	` name = data.get("name")
+    notes_enabled = data.get("notes_enabled", False)`
+
+to:
+	` name = data.get("name")
+    notes_enabled = data.get("notes_enabled) == "true"`
+
+so that when I pass the checkbox data with a value of "true", the backend decodes the string to True. Additionally, I had to add an input type of the same name, with the type of "hidden", and value of "false" to be able to pass to the backend False when the checkbox isn't checked.
+
+
+
 # 12/01/25 - 
 Over the last couple of days I have been polishing up my resume and my personal website to start applying for jobs. The website is almost done, I just need to add some screenshots of my various projects and update the links. Resume is looking much better too. 
 
