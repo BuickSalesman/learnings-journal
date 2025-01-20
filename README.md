@@ -1,3 +1,10 @@
+#19/01/25 - 
+I am missing a journal entry from yesterday because I forgot to save changes and closed the tab. I don't remember what I journaled about lol. I thought about it for a second, and now I remember. I learned why "&times" makes the "x" symbol in html, and by proxy learned about &amp and &lt and others. Then I went on a whole journey about why the ampersand is called the ampersand, how it was once taught as the 27th letter of the englush alphabet, how it's earliest recorded usage is from 75 A.D., and how the word ampersand derives from the phrase "and per say and". 
+
+I forgot to push my code yesterday and thought I broke a 230+ day streak of GitHub commits. I almost had a heart attack. This taught me that if you add and commit your code, but don't push, it saves the date whent he code is either added or commited. Thank the lord my green dot filled in when I pushed today. 
+
+
+
 # 16/01/25 -
 Today I learned a little bit more about input types in forms. I started to make a form in React to eventually be imported into a modal that pops up when the new repo button is clicked. I had to exit my backend logic from:
 	` name = data.get("name")
