@@ -1,4 +1,13 @@
-#19/01/25 - 
+# 29/01/25 - 
+Things have been chugging along with Git-It-Together, I now have the basic app almost at MVP. It will need a TON of styling, so I'm excited to see what I'll discover soon about media queries. I have very specific aethetics per device in mind. Right now the haetmap still needs a little work. It is displaying 1 day off for many of my repos, I'm not sure why yet, as I discovered this yesterday after changing the heatmap function around a bit. I want to see what commit for multiple days in a row does for the display, so since I didn't want to touch that code today, I did a creative coding hour. 
+
+I ended up making what is basically a fake drag and drop between two divs that each hold a square. The mouse is listened for in several places, and essentailly the code listens for when the mouse is held down, and enters or leaves a div, "swapping"  (by means of switching the background colors of each square within each div) the white square to the div that the mouse just entered. There's also a coutner that appears within the white square that lets you know how many times the squre has been passed to a new container. 
+
+When I had finished writing my code, I took a look at it and realized it would give Sandi Metz a heart attack. I want to challenge myself soon to have 99 Bottles of OOP in front of me and go through this code and try to refactor it to be very clean and dry. 
+
+
+
+# 19/01/25 - 
 I am missing a journal entry from yesterday because I forgot to save changes and closed the tab. I don't remember what I journaled about lol. I thought about it for a second, and now I remember. I learned why "&times" makes the "x" symbol in html, and by proxy learned about &amp and &lt and others. Then I went on a whole journey about why the ampersand is called the ampersand, how it was once taught as the 27th letter of the englush alphabet, how it's earliest recorded usage is from 75 A.D., and how the word ampersand derives from the phrase "and per say and". 
 
 I forgot to push my code yesterday and thought I broke a 230+ day streak of GitHub commits. I almost had a heart attack. This taught me that if you add and commit your code, but don't push, it saves the date whent he code is either added or commited. Thank the lord my green dot filled in when I pushed today. 
