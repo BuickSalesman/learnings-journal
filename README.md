@@ -1,3 +1,17 @@
+# 12/02/24 -
+It has been too long since I journaled! I should make that a repo in git-it-together, which I am putting the finishing touches on the MVP today. I ended up implementing the cal-heatmap library (found at https://cal-heatmap.com/), which has been an absolute godsend. I have everything but styling basically done, I just need to make a component that shows saved commit notes when you click on a specific day. One thing I failed at figuring out, both through the library and basic styling, was preventing showing days in the future. The library can organize your calendar by month, which seems to force showing the whole month at a time within a given range. 
+
+On top of this, creative coding has been going really great. I have two new projects that I can show, that I have already added to my website, and a few more that didn't quite make the cut. 
+
+https://rainbow-text.onrender.com/ - a text box that you can type into, and will randomize all letters colors as you type or delete each character.
+https://quickdraw-sharpshooter.onrender.com/ - a point and click shooter in which your target gets progressively harder to shoot.
+
+I made quickdraw sharpshooter yesterday with Jeff, and I told him moving forward I would love to help him with anything he's programming but is too busy to get around to. He can define an MVP, and I can code it up checking in with him week by week, so that he can provide feedback and monitor progress. He liked the idea, and is going to come up with some ideas for me. 
+
+Lastly, someone sent out a message in the Actualize Slack, asking if anyone was interested in pair programming with them. I reached out to them to see if I could help them along, as they were saying they were dusting off their keyboard after a long time of not practicing. 
+
+
+
 # 29/01/25 - 
 Things have been chugging along with Git-It-Together, I now have the basic app almost at MVP. It will need a TON of styling, so I'm excited to see what I'll discover soon about media queries. I have very specific aethetics per device in mind. Right now the haetmap still needs a little work. It is displaying 1 day off for many of my repos, I'm not sure why yet, as I discovered this yesterday after changing the heatmap function around a bit. I want to see what commit for multiple days in a row does for the display, so since I didn't want to touch that code today, I did a creative coding hour. 
 
