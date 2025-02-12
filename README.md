@@ -4,6 +4,7 @@ It has been too long since I journaled! I should make that a repo in git-it-toge
 On top of this, creative coding has been going really great. I have two new projects that I can show, that I have already added to my website, and a few more that didn't quite make the cut. 
 
 https://rainbow-text.onrender.com/ - a text box that you can type into, and will randomize all letters colors as you type or delete each character.
+
 https://quickdraw-sharpshooter.onrender.com/ - a point and click shooter in which your target gets progressively harder to shoot.
 
 I made quickdraw sharpshooter yesterday with Jeff, and I told him moving forward I would love to help him with anything he's programming but is too busy to get around to. He can define an MVP, and I can code it up checking in with him week by week, so that he can provide feedback and monitor progress. He liked the idea, and is going to come up with some ideas for me. 
