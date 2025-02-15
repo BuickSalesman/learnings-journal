@@ -1,4 +1,4 @@
-14/02/25 -
+# 14/02/25 -
 Job searching is tough, and has taken priority over coding. I am not willing to end my streak though. git-it-togethers final feature has proven challenging, and I have discovered a bug where when I click a node, it is returning data from the previous days node. I need to really sit down and go through a couple components with a fine tooth comb. I tried to do so today, but with my mental enegrgy spent on job searching, I found it incredibly hard to give the project the attention it deserves. Hopefully on another day soon a cloudy heads will clear. 
 
 The person I journaled about in my last entry actually reached back out to me and said it would be great to code together, so hopefully helping him get back into the swing of coding helps me as much as it helps him. I'm excited to meet him and see if we have anything in common.
