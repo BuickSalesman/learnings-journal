@@ -1,4 +1,11 @@
-# 12/02/24 -
+14/02/25 -
+Job searching is tough, and has taken priority over coding. I am not willing to end my streak though. git-it-togethers final feature has proven challenging, and I have discovered a bug where when I click a node, it is returning data from the previous days node. I need to really sit down and go through a couple components with a fine tooth comb. I tried to do so today, but with my mental enegrgy spent on job searching, I found it incredibly hard to give the project the attention it deserves. Hopefully on another day soon a cloudy heads will clear. 
+
+The person I journaled about in my last entry actually reached back out to me and said it would be great to code together, so hopefully helping him get back into the swing of coding helps me as much as it helps him. I'm excited to meet him and see if we have anything in common.
+
+
+
+# 12/02/25 -
 It has been too long since I journaled! I should make that a repo in git-it-together, which I am putting the finishing touches on the MVP today. I ended up implementing the cal-heatmap library (found at https://cal-heatmap.com/), which has been an absolute godsend. I have everything but styling basically done, I just need to make a component that shows saved commit notes when you click on a specific day. One thing I failed at figuring out, both through the library and basic styling, was preventing showing days in the future. The library can organize your calendar by month, which seems to force showing the whole month at a time within a given range. 
 
 On top of this, creative coding has been going really great. I have two new projects that I can show, that I have already added to my website, and a few more that didn't quite make the cut. 
