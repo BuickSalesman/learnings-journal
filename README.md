@@ -1,3 +1,20 @@
+# 16/04/25 - 
+Hello again! It's been a looooonnngggg 2 months with no updates! How ashamed I am! I just went ahead and created a repo in Git It Together to track this, so I can stay on track with the habit.
+
+I just came off 5 weeks of leetcode every day. I've been going through the blind75 list on neetcode.io - such a great resource. I am attempting a challenge where I use the woodpecker method with common leetcode questions used in tech interviews to not only memorize them entirely, but also greatly improve my problem solving chops. If you're unfamiliar with the woodpecker method, it's a book written by two chess grandmasters, that can be simply explained in this two minute video:
+
+https://www.youtube.com/watch?v=O1keZYdPgD0&ab_channel=Chessable
+
+I have just completed my first iteration of problems (58 problems in 5 weeks, with solutions in both Python and JavaScript), so now I have a week off. I only have about 6 weeks left until I have pushed to GitHub every day for a year straight. I don't know if I will keep the streak once the year is up. The goal was to build the habit, and now the habit is built. I will still code most days, but I don't want to have to do it to a fault any more. 
+
+Additionally, today is my first day of freedom from Jimmy John's. Since I last journaled, I have a rollercoaster of emotions there. Almost quitting, to being promoted to GM with a big pay raise, to getting a call back from a job I applied to in February, which led me to pursue that opportunity instead, as it is many less hours and fully remote. Very excited for this next chapter. It will give me more time for everything in my life that Jimmy took from me, though I will miss the constant work of getting a restaurant to run correctly -- that was very reqarding in it's own right. 
+
+I won't rest on my laurels though, I haven't been able to search for coding jobs since taking over as GM. Now that I am free, it's back to the things that really matter. Coding, job searching, making good food, reading, and spending time with the people I care about. 
+
+On the topic of reading, I finally finished The Light Eaters by Zoe Schlanger. This has to be one of my new favorite books, and it has entirely cured my plant blindness. I've moved on to Jay Wengrow's A Common Sense Guide to Data Structures and Algorithms, oh which I am about 1/3rd of the way through. I've learned so much about Big O and just coding simply, logically, and cleanly, from the ground up from this book so far. The book should help me greatly in tandem with the woodpecker leetcode challenge. When I just can't stand to push my brain to think about code, I've been reading Plants Have So Much to Give Us, All We Have to Do Is Ask: Anishinaabe Botanical Teachings by Mary Siisip Geniusz.
+
+
+
 # 14/02/25 -
 Job searching is tough, and has taken priority over coding. I am not willing to end my streak though. git-it-togethers final feature has proven challenging, and I have discovered a bug where when I click a node, it is returning data from the previous days node. I need to really sit down and go through a couple components with a fine tooth comb. I tried to do so today, but with my mental enegrgy spent on job searching, I found it incredibly hard to give the project the attention it deserves. Hopefully on another day soon a cloudy heads will clear. 
 
