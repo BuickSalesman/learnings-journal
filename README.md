@@ -1,3 +1,10 @@
+# 18/04/25 -
+LAunched git-it-togther! Spent the last 4-ish hours figuring out how to move my database over to Render, link the Render DB to the Render deployed backend, set up a whole bunch of ENV variables, and then configured CORS for a Netlify deployed frontend. All in all a great decision to deploy at this stage. I can now fix things that were fine on my local machine but are clearly a pain in production while hosted by free tiers of two providers that have to talk to each other. Other than optimizing for speed, there is only a very short list of things I feel like I truly need to add, and only a few things on my "maybe someday" list. It will definitely be a priority project though, since I use it every day, and have used it every day for about 6 weeks now. 
+
+Now I can finally shut down my local server after months of having it running for development!
+
+
+
 # 16/04/25 - 
 Hello again! It's been a looooonnngggg 2 months with no updates! How ashamed I am! I just went ahead and created a repo in Git It Together to track this, so I can stay on track with the habit.
 
