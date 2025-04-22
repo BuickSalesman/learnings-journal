@@ -1,3 +1,12 @@
+# 22/04/25 - 
+Today marks the second loop through my leetcode woodpecker method. I will have to solve 3-4 problems a day to keep on track with my goals, and since I'm doing everything in both JavaScript and Python, double that. Getting through these first few days should be easy enough, I have the time before I start my new job. 
+
+I really need to restructure git-it-together asap. I'm not sure exactly how yet, but I'm leaning towards grabbing all user data I need in a few api calls up front upon login to the site. Then I can store everything in state, and not refresh the page every time I create a new commit or repo. I need to figure out a way to save commits in state so that if someone wants to add 15 commits to different repos at the end of the night, like I often do, they don't have to wait for an api call and a page refresh between each one. Maybe I can send data to the database once I detect lack of activity on the page for a cetain length of time, and then save all new data on the front end or in state or something, to actually be entered into the db all at once. There has to be best practice for this, but I don't know exaclty what it's called. Hopefully I can talk to Jeff or Peter about it soon. 
+
+Additionally, I don't know how I didn't know this, but today I learned if you write a return statement within a loop, it ends the loop there, saving time. This is not the same for forEach in JavaScript. 
+
+
+
 # 18/04/25 -
 LAunched git-it-togther! Spent the last 4-ish hours figuring out how to move my database over to Render, link the Render DB to the Render deployed backend, set up a whole bunch of ENV variables, and then configured CORS for a Netlify deployed frontend. All in all a great decision to deploy at this stage. I can now fix things that were fine on my local machine but are clearly a pain in production while hosted by free tiers of two providers that have to talk to each other. Other than optimizing for speed, there is only a very short list of things I feel like I truly need to add, and only a few things on my "maybe someday" list. It will definitely be a priority project though, since I use it every day, and have used it every day for about 6 weeks now. 
 
