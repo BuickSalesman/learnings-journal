@@ -1,3 +1,14 @@
+# 24/04/25 - 
+I made a ton of changed to git-it-together. I stayed up all night learning about olptimistic UI, tanstack-query, and react mutate. I ended up implementing these things to really change the flow of the whole app, and also refactored my whole Auth system to fix the jwt refresh bug I had, that would prevent you from accessing data, but wouldn't actually log you out. Now I have refresh tokens set up, and the access tokens are only good for 15 minutes. Additionally, I have a loading screen now, and the app loads when you first log in as it makes necessary api calls, caches all that data for later, and builds the full app in the background, and then gets rid of the loading screen. I still have to make a few changes to a few components to allign with the new technologies I've used, but for the most part there is a night and day difference in how the app behaves. I'm really exited to be able to consistently make changes over tikme to this app, because I actually use it every day, so it's always right there in front of me keeping my attention. Soon though, I'll take a break and take up Astro for Kelsey's website. 
+
+Someone told me it's probably best to just take a template website and slap stripke on there for payments, which I can do and is fine if I want to get the website up and running in a day or two, but wouldn't it be better to actually learn some new things in the process, and give someone I care about a bespoke website?
+
+So far I've been able to keep up with 4 leetcode problems a day, and even though things do not make perfect sense yet, and I can not come up with perfect or optimal solutions for these problems on the first go around, I know a lot more on this second pass than I did the first time. I can feel it. I'm very excited to see how far I come by the time I complete all the woodpecker iterations of this challenge, and I'm keeping track of how many problems per day I do in git-it-together. 
+
+Lastly, I have my first casual coding meeting on Saturday. Super excited! Maybe I'll make a friend!
+
+
+
 # 22/04/25 - 
 Today marks the second loop through my leetcode woodpecker method. I will have to solve 3-4 problems a day to keep on track with my goals, and since I'm doing everything in both JavaScript and Python, double that. Getting through these first few days should be easy enough, I have the time before I start my new job. 
 
