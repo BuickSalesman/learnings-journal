@@ -1,3 +1,10 @@
+# 19/05/25 -
+I started on my third iteration of the leetcode woodpecker challenge. After the first day I felt like total garbage, like I hadn't learned anything at all. I was feeling really down on myself for that, and after an evening of moping I got back on the horse the next day. I've been coding every day for over 350 days at this point, and I realized just saying you did something for the day isn't going to cut it for me any more. The habit I saught to build is here and solid, now I need to shift my focus to quality over quanitity. The next day, I decided to really sit down and sketch out each problem, the inputs and outputs, and draw out each step on paper. Then, after that, turn those steps into pseudocode. Only once I have a working proof of concept in pseudocode of how to solve the provlem, only then will I attempt to solve the problem. Wouldn't you know it, I solved 6 problems that day without looking at the solutions! Very happy to know that I have been learning a good bit about DSA, I just wasn't following good practice and procedure when actually solving problems. Whiteboarding the solution only takes a few more minutes buy and large than just trying to force the code onto the screen right away. 
+
+There should be more to talk about soon, but it's late and I'm journaling before bed, and Kelsey is eager to hop into bed with me for the night!
+
+
+
 # 27/04/25 - 
 I haven't had too much time to work on git-it-together, as I have spun up the next iteration of my leetcode woodpecker challenge and I am 5 days into it. A lot of the problems so far I have a much deeper understanding of! Other problems I do not remember very well and a couple of days now I have spent very confused at problems I know I have seen before but remember NOTHING about, hopefully this will change with the next few iterations.
 
