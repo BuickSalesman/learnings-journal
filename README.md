@@ -10,6 +10,7 @@ Obviously the solution will be recursive, which I am getting pretty good at but 
 I basically want to iterate through each row, and each column of each row, to see if the letter at a specific point in the board (board[r][c]) is equal to the first letter of the word. If it is not the first letter of the word, I can skip it and move on. If it is, however, I need to recursviely call this search on the letters to the top, bottom, left, and right of this first letter, do see if any of those letters are the second letter of the word. You can use a set to make sure you never visit the same cell twice down the recursion stack, and then check if the cell is in the stack before moving on to the next call, but I do like the little hack of just replacing the letter at board[r][c] with a delimiter, in this case: "#". So if we do indeed find the first letter of the word, we change it to "#" before we recurse, and then change it back to the first letter (or whatever other index you are at in the word) when we are done recursing. Just make sure you add the check of if board[r][c] == "#" in any conditional statement that returns False to end recursion. We also want to make sure that r and c are not less than 0, or r is not greater than the number of rows, or c is not greater than the number of columsn, because all of those things would be out of bounds.
 
 To summarize: 
+
 	if r < 0 or c < 0 or r >= len(board) or c >= len(board[0]) or board[r][c] != word[i] or board[r][c] == "#":
  		return False
 
@@ -18,8 +19,26 @@ With each call down the recursion stack we also want to be checking the next ind
 I thought the most interesting thing about this was the neat little hack of saying if i == len(word), the full word we are serching for must be in the grid. At first this didn't make sense to me, but it's just the nature of recursion. If the length of our word is 3, and we have turned three letters on the board into "#", after we turn that last letter into a "#" and recurse lower, the index WOULD be equal to the length of the word, and so we know that since there are 3 letters in the word, and we have changed 3 letters on the board to "#", then we must have found our word. This is the simplest thing to do as a base case, and we can avoid saving into memory which letter we have already found. 
 
 To summarize:
+
 	if i == len(word):
  		return True
+
+This True bubbles up all the way to the very first recursion call, so if a single call every results in True, the whole shebang results in True. If we never find a True, we just have to return False in our parent Word Search function.
+
+So we have to call this function at least once on every letter in the grid, meaning we have to do a nested loop. The first loop iterates over each row in board, and then second loop iterates over each column in that row in board. If any of those dfs' return True, the whole thing is true. Otherwise, we return False when we are done looping.
+
+To sumamrize:
+
+	for r in range(len(board)):
+ 		for c in range(len(board[0])):
+   			if dfs(r, c, 0):
+      				return True
+
+   	return False
+
+
+Not too bad of a question once you identify the conditionals that determine if a result of a call is true or false! Hopefully next time I tackle this problem I will have much easier time solving it!
+
 
 
 # 27/05/25 -
