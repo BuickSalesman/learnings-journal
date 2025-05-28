@@ -1,3 +1,46 @@
+# 28/05/25 - 
+I have decided that when I do a particularly challenging LeetCode problem, especially one's I can't solve on my own without hints or in a single attempt, I should write down some things I learned from going through the problem step by step.
+
+Today's problem is WordSearch - https://neetcode.io/problems/search-for-word
+
+I remembered from the last time I encountered this problem that I have to get the rows and columns of the board in some capacity. I found out that this is as simple as rows = len(board) and cols = len(board[0]). At first I thought this was getting the length of a secret created-under-the-hood array of all rows that have at least index 0 within them, but it is actually as simple as it seems. The length of rows are the number of items in the board array, and the length of cols in the number of items within the first item in the board array. Really, this problem should have a quadrilateral grid, so I could take the length of any of the arrays within the board array. If it wasn't guaranteed that all rows would have the same number of cols, I would have to add additional checks to avoid out of bounds errors.
+
+Obviously the solution will be recursive, which I am getting pretty good at but still breaks my brain sometimes. The recusion chapter in Jay Wengrow's book really helped me out a lot. 
+
+I basically want to iterate through each row, and each column of each row, to see if the letter at a specific point in the board (board[r][c]) is equal to the first letter of the word. If it is not the first letter of the word, I can skip it and move on. If it is, however, I need to recursviely call this search on the letters to the top, bottom, left, and right of this first letter, do see if any of those letters are the second letter of the word. You can use a set to make sure you never visit the same cell twice down the recursion stack, and then check if the cell is in the stack before moving on to the next call, but I do like the little hack of just replacing the letter at board[r][c] with a delimiter, in this case: "#". So if we do indeed find the first letter of the word, we change it to "#" before we recurse, and then change it back to the first letter (or whatever other index you are at in the word) when we are done recursing. Just make sure you add the check of if board[r][c] == "#" in any conditional statement that returns False to end recursion. We also want to make sure that r and c are not less than 0, or r is not greater than the number of rows, or c is not greater than the number of columsn, because all of those things would be out of bounds.
+
+To summarize: 
+	if r < 0 or c < 0 or r >= len(board) or c >= len(board[0]) or board[r][c] != word[i] or board[r][c] == "#":
+ 		return False
+
+With each call down the recursion stack we also want to be checking the next index of the word, as we are now checking for the next letter, so each time we go deeper, we want to add 1 to i.
+
+I thought the most interesting thing about this was the neat little hack of saying if i == len(word), the full word we are serching for must be in the grid. At first this didn't make sense to me, but it's just the nature of recursion. If the length of our word is 3, and we have turned three letters on the board into "#", after we turn that last letter into a "#" and recurse lower, the index WOULD be equal to the length of the word, and so we know that since there are 3 letters in the word, and we have changed 3 letters on the board to "#", then we must have found our word. This is the simplest thing to do as a base case, and we can avoid saving into memory which letter we have already found. 
+
+To summarize:
+	if i == len(word):
+ 		return True
+
+
+# 27/05/25 -
+It's official! I have made at least one commit to GitHub per day for 365 days straight!! I am planning on writing more in depth about this journey, either here or in some sort of blog post - possibly on my portfolio website. But I will put a quick overview of some of the accomplishments I've made this year, offhand from memory:
+	- Made 2 huge projects: Digital Paper Warfare and git-it-together
+ 	- Made 5 or 6 small projects
+  	- Made a portfolio website
+   	- Read 2 comp sci books to completion - Chartles Petzold's CODE and A Common Sense Guide to DSA by Jay Wengrow, and also started 99 Bottles of OOP by Sandi Metz
+    	- Got much much better at LeetCode style interview questions
+     	- Better learned how to use AI as a tool and not a crutch
+      	- Reenforced to me what real, deliberate learning feels like vs. what doing something just to do it feels like. (Did a lot of both this year).
+       	- Got a new remote job with better pay and better benefits
+	- Stopped a decade old marijuana addiction
+ 	- Stopped a multi-year vaping addiction
+  	- Got back on ADHD medication
+   	- Stopped drinking alchohal in any amount of excess
+    
+It's been a hell of a self-improvment journey, and these are some huge leaps in just one year's time. I can't wait to see how far I can push myself in the next year. I haven't decided if I will be keeping my streak up for 730 days straight, but I will definitely be coding tomorrow.
+
+
+
 # 19/05/25 -
 I started on my third iteration of the leetcode woodpecker challenge. After the first day I felt like total garbage, like I hadn't learned anything at all. I was feeling really down on myself for that, and after an evening of moping I got back on the horse the next day. I've been coding every day for over 350 days at this point, and I realized just saying you did something for the day isn't going to cut it for me any more. The habit I saught to build is here and solid, now I need to shift my focus to quality over quanitity. The next day, I decided to really sit down and sketch out each problem, the inputs and outputs, and draw out each step on paper. Then, after that, turn those steps into pseudocode. Only once I have a working proof of concept in pseudocode of how to solve the provlem, only then will I attempt to solve the problem. Wouldn't you know it, I solved 6 problems that day without looking at the solutions! Very happy to know that I have been learning a good bit about DSA, I just wasn't following good practice and procedure when actually solving problems. Whiteboarding the solution only takes a few more minutes buy and large than just trying to force the code onto the screen right away. 
 
