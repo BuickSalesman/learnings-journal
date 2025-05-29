@@ -1,3 +1,22 @@
+# 29/05/25 - 
+Today's problem is Implement Trie - https://neetcode.io/problems/implement-prefix-tree
+
+I like tries a lot and I think they are really cool. For the most part I remembered how to solve this offhand, but there are a few things that tripped me up that I'll talk about here so I can better commit them to memory.
+
+The first gotcha in this problem is that you have to implement the TrieNode class yourself, whereas in any of the linked list or previous binary tree problems the Node class is already implemented. Basically, a Trie is a Tree, but instead of having a link that points to the next node in the tree, the next node is housed within a hasmap of the Trie's children, and also has a boolean at each node to let you know if this is the end of a word. So the Trie for "DOG" looks like: 
+
+ 	Trie = children: {"D": {children: {"O": {children: {"G": {children: {}, EOW: true}}, EOW: false}}, EOW: false}}, EOW: false}
+
+The rest of the problem is pretty easy and straightforward once you understand what you are dealing with, the only other gotcha being you have to use a dummy node to progress through the Trie, so that the rest of your functions do not have the root being passed in modified. 
+
+For insertion of a word you cycle through each index of the word and check if that index is within the children of the node, starting at the root. So for the DOG example, you would check if D is a child of the root, and since at that point it isn't, you use your dummy node (initialized to the root) to created a new TrieNode within the children of the root named "D", with the children of {} and end_of_word = False, and then move your dummy node from the root to "D". Rinse and repeat for the rest of the characters until you finish your loop, and then set the the value for end_of_word for the current (last) node in your word to True.
+
+For searching, you repeat, but if at any point you have a letter that isn't within the children of the preceeding letter, immediately return False, and if you make it all the way through your loop, return the value of end_of_word for the node (letter) you ended on. If it's True, it's True. if It's False, it's not the end of a word, meaning the Trie does not contain the word. For example, if you searched for the word "DO" after inserting "DOG", you would return False, because the child O of child D has end_of_word = False.
+
+Lastly, for searching by prefix, It's the exact same as above only instead of returning the value of end_of_word, we just say if you can make it all the way through the end of your loop, just return True. Using the same example as before, after inserting "DOG" if you searched for prefix "DO", you would return True, because you are able to to complete your loop of every character in "DO" without returning False. 
+
+
+
 # 28/05/25 - 
 I have decided that when I do a particularly challenging LeetCode problem, especially one's I can't solve on my own without hints or in a single attempt, I should write down some things I learned from going through the problem step by step.
 
