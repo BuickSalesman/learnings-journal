@@ -1,3 +1,53 @@
+# 30/05/25 -
+Today's problem is Design Add and Search Word Data Structure - https://neetcode.io/problems/design-word-search-data-structure
+
+The first half of this problem is exactly the same as yesterday's problem and I breeze through it, but then I got tripped up. The search function of this problem has to allow for "." to mean any letter of the alphabet and then continue. I knew right away that I had to solve this recursively, but I struggled implementing it at first. At first I wanted to loop through each of the root node's children and then recursively call a loop for each of the children, but I realized that you have to pass the root directly into the recursive call, and then make a pointer that points to the root and changes when you go further down the Trie. The first "gotcha" here is that if you have solved the previous problem you may be expecting for for...in loops, since every function in the last problem was built on one. You MUST use a for...in range() loop. When you first enter your recursive function you want to define your pointer as the highest node on the Trie you have access to, the one that was passed in via the function arguments. Then you want to jump straight into your loop. Once you jump into your loop you want to point to each character of the input word for each index of the loop, so you can immediately set:
+
+ 	c = word[i]
+
+You then of course want to check if c is a ".". If it is not, then you are free to just search the exact same way you did in the last problem, by checking if c is in node.children, and if it isn't return false, and if you make it all the way through you loop with no "."s, then you can return the value of end_of_word and end the function call. If end_of_word is True, it's a word! Yay! If end_of_word is False, there are more node's underneath the current node, and the word you are searching for has not been previously added to the Trie. For example, if you were to add "APPLE" and search for "APP" you would return false, since the second P in APPLE is not designated as the end of a word.
+
+If c is indeed equal to ".", then we have to recursively call the recursive function on every child of the current root. Here was can use a for... in loop:
+
+	for child in node.children.values():
+ 		if dfs(child, i + 1):
+   			return True
+      	return False
+
+The minor trick here is to remember that similarly to searching for a word with no "."s, we need to be able to return False if the node we end on isn't end_of_word = True. If we just ran dfs(child, i + 1) with no conditional prior, the first time we encounter False, that result would bubble up to the top of the recusion stack, and we would end our inner for loop early and never check the remaining children. If we were searching "D..", and we had previously inserted "DAYS" and "DOG" into our Trie, we may recursively search down the Trie of DAYS, end on letter Y, and return False because it is not the end of a word, never finishing the loop to search the DOG Trie, which would return True. Only once we finish our inner for loop having returned nothing True, may we proceed to return False and end the search function. Also take note here to remember that we are iterating over values of an object, so in python be sure to attach that pesky ".values()" method, and in JavaScript Object.values(node.children).
+
+The major trick here is to remember that since this for...in range() loop is going to be called at every function call, and you want the loop to not reset to the first character in your word, you have to pass the start value in as your second recursive argument. 
+
+When you are writing:
+
+ 	for i in range(len(word))
+
+You want to make sure that you don't lose your place in line, so the next time you call the loop, you loop from your start value. For example:
+
+	def dfs(root, start):
+ 		node = root
+
+   		for i in range(start, len(word)):
+     			c = word[i]
+			if c == ".":
+				for child in node.children.values():
+ 					if dfs(child, i + 1):
+   						return True
+      				return False
+       			else:
+	  			#rest of your search function here
+
+I knew that for i in range(start,stop,ste[) loops in Python are equivelent to for (let i = start; i < stop; i += step) in Javascript, but this was a lesson in how this truly works. For some reason, I didn't realize the i in for i in range(start,stop,step) is literally defined by your start, so if you had for i in range(3,4), the i = 3, the loop runs until and is not inclusive of 4, and the step is default to 1. This is why it is so important to save your place in line of the word you are iterating through. If you were to just recursively call for i in range(len(word)), even if you passed in a value i as a function argument, it would be overwritten by this loop when it sets i = 0 under the hood, since we never specified a start value. By passing your start value in as the next index in the word, you always save your place in line. 
+
+Once you've defined your dfs, you can safely:
+
+ 	def search(word):
+		return dfs(this.root, 0) 
+
+
+
+
+
 # 29/05/25 - 
 Today's problem is Implement Trie - https://neetcode.io/problems/implement-prefix-tree
 
