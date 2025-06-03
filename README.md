@@ -1,5 +1,5 @@
 # 02/06/25 - 
-## My bosses and coworkers enjoyed the tool I made them, so I'm very pleased! I also just a clear button for the input field, as clearing it manually is a tiny bit annoying to me in practice. With that said, on to the real entry:
+## My bosses and coworkers enjoyed the tool I made them, so I'm very pleased! I also just added clear button for the input field, as clearing it manually is a tiny bit annoying to me in practice. With that said, on to the real entry:
 
 Today's problem is Word Search II - https://neetcode.io/problems/search-for-word-ii
 
