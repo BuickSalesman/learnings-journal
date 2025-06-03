@@ -1,3 +1,21 @@
+# 03/06/25 - 
+## when I added the clear button I broke my little project when mass changed getElementById("input-area"), to a varible. This resulted in me called document.inputArea.textContent in one line, causing the whole thing to error out. Fixed it quick though!
+
+Today's first problem is number of islands - https://neetcode.io/problems/count-number-of-islands
+
+Not sure why this problem comes after the last 3 or four problems, as I can immediately tell I'll be calling recusive functions and to search a grid. It's basically a super slimmed down version of either word search problem. 
+
+First we grab the length of our rows and columns, and we also initialize out islands variable to 0. Then we call a depth first search on every coordinate of the grid, which gives us our result in linear time. Just make sure to set the tile you are on to "0" before calling your next round of dfs', so that you don't revisit a coordinate. 
+
+The only real gotcha here is you can slightly improve the time by only performing the initial depth first search on squares that are already marked as "1". I elected not to do this, and just used - 
+
+ 	if dfs(r,c):
+  		islands += 1
+    
+ - within my nested loops, and returned False if the coordinate was "0", or if r/c < 0 or r/c >= size of grid. I would return True at the end of the function, after the additional dfs' were run in each cell direction - N,S,E,W.
+
+
+
 # 02/06/25 - 
 ## My bosses and coworkers enjoyed the tool I made them, so I'm very pleased! I also just added clear button for the input field, as clearing it manually is a tiny bit annoying to me in practice. With that said, on to the real entry:
 
