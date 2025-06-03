@@ -7,12 +7,12 @@ Not sure why this problem comes after the previous three or four problems, as I 
 
 First we grab the length of our rows and columns, and we also initialize our islands variable to 0. Then we call a depth first search on every coordinate of the grid, which gives us our result in linear time. Just make sure to set the tile you are on to "0" before calling your next round of dfs', so that you don't revisit a coordinate. 
 
-The only real gotcha here is you can slightly improve the time by only performing the initial depth first search on squares that are already marked as "1". I elected not to do this, and just used - 
+The only real gotcha here is you can slightly improve the time by only performing the initial depth first search on squares that are already marked as "1". I elected not to do this, and just used- 
 
  	if dfs(r,c):
   		islands += 1
     
- - within my nested loops, and returned False if the coordinate was "0", or if r/c < 0 or r/c >= size of grid. I would return True at the end of the function, after the additional dfs' were run in each cell direction - N,S,E,W.
+-within my nested loops, and returned False if the coordinate was "0", or if r/c < 0 or r/c >= size of grid. I would return True at the end of the function, after the additional dfs' were run in each cell direction - N,S,E,W.
 
 
 
