@@ -38,7 +38,9 @@ We do our checks to end the call early, which in my mind has 4 parts:
 * make sure r and c are NOT greater than the length of any row or column
 * make sure we are not checking a square in the board we have already been to
 * and make sure the coordinate we are checking exists in the children of the current node
-If all of these things are true, we can move on, otherwise we just return. Here's what the code looks like jsut for practice:
+If all of these things are true, we can move on, otherwise we just return.
+
+Here's what the code looks like jsut for practice:
 
     	if r < 0 or c < 0 or r >= len(board) or c >= len(board[0]) or board[r][c] != "#" or board[r][c] not in node.children:
      		return
