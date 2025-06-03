@@ -34,11 +34,11 @@ Now we are into the meat and potatoes, and we can define our recursive function.
 	def dfs(r, c, node):
 
 We do our checks to end the call early, which in my mind has 4 parts:
-	- make sure r and c are greater than 0
- 	- make sure r and c are NOT greater than the length of any row or column
-  	- make sure we are not checking a square in the board we have already been to
-   	- and make sure the coordinate we are checking exists in the children of the current node
-    If all of these things are true, we can move on, otherwise we just return. Here's what the code looks like jsut for practice:
+* make sure r and c are greater than 0
+* make sure r and c are NOT greater than the length of any row or column
+* make sure we are not checking a square in the board we have already been to
+* and make sure the coordinate we are checking exists in the children of the current node
+If all of these things are true, we can move on, otherwise we just return. Here's what the code looks like jsut for practice:
 
     	if r < 0 or c < 0 or r >= len(board) or c >= len(board[0]) or board[r][c] != "#" or board[r][c] not in node.children:
      		return
@@ -194,18 +194,18 @@ Not too bad of a question once you identify the conditionals that determine if a
 
 # 27/05/25 -
 It's official! I have made at least one commit to GitHub per day for 365 days straight!! I am planning on writing more in depth about this journey, either here or in some sort of blog post - possibly on my portfolio website. But I will put a quick overview of some of the accomplishments I've made this year, offhand from memory:
-	- Made 2 huge projects: Digital Paper Warfare and git-it-together
- 	- Made 5 or 6 small projects
-  	- Made a portfolio website
-   	- Read 2 comp sci books to completion - Chartles Petzold's CODE and A Common Sense Guide to DSA by Jay Wengrow, and also started 99 Bottles of OOP by Sandi Metz
-    	- Got much much better at LeetCode style interview questions
-     	- Better learned how to use AI as a tool and not a crutch
-      	- Reenforced to me what real, deliberate learning feels like vs. what doing something just to do it feels like. (Did a lot of both this year).
-       	- Got a new remote job with better pay and better benefits
-	- Stopped a decade old marijuana addiction
- 	- Stopped a multi-year vaping addiction
-  	- Got back on ADHD medication
-   	- Stopped drinking alchohal in any amount of excess
+- Made 2 huge projects: Digital Paper Warfare and git-it-together
+- Made 5 or 6 small projects
+- Made a portfolio website
+- Read 2 comp sci books to completion - Chartles Petzold's CODE and A Common Sense Guide to DSA by Jay Wengrow, and also started 99 Bottles of OOP by Sandi Metz
+- Got much much better at LeetCode style interview questions
+- Better learned how to use AI as a tool and not a crutch
+- Reenforced to me what real, deliberate learning feels like vs. what doing something just to do it feels like. (Did a lot of both this year).
+- Got a new remote job with better pay and better benefits
+- Stopped a decade old marijuana addiction
+- Stopped a multi-year vaping addiction
+- Got back on ADHD medication
+- Stopped drinking alchohal in any amount of excess
     
 It's been a hell of a self-improvment journey, and these are some huge leaps in just one year's time. I can't wait to see how far I can push myself in the next year. I haven't decided if I will be keeping my streak up for 730 days straight, but I will definitely be coding tomorrow.
 
