@@ -54,7 +54,7 @@ And you're done! Just remember to actually return self.res at the end of your ne
 
 
 # 31/05/25 -
-I completed and deployed a little problem that will help me out at work! You can find it [here:](https://aciextractor.onrender.com/)
+I completed and deployed a little problem that will help me out at work! You can find it [here](https://aciextractor.onrender.com/).
 
 All it is is something that skims a stream of text in one text are for a substring matching the syntax of our account numbers, and then if it does adds it to a string + "\n" for new line, and then keeps going until it finds all substrings of the string that match that condtion. The result is a bunch of account numbers separated by newlines, and you can input this string all at once into a software we use at work to look up all of the account numbers at once. It will definitely help me speed through things a little faster at work going foward.
 
