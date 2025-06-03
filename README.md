@@ -1,5 +1,5 @@
 # 03/06/25 - 
-## when I added the clear button I broke my little project when mass changed getElementById("input-area"), to a varible. This resulted in me called document.inputArea.textContent in one line, causing the whole thing to error out. Fixed it quick though!
+## when I added the clear button I broke my little project when I mass changed getElementById("input-area"), to a varible. This resulted in me called document.inputArea.textContent in one line, causing the whole thing to error out. Fixed it quick though!
 
 Today's first problem is number of islands - https://neetcode.io/problems/count-number-of-islands
 
