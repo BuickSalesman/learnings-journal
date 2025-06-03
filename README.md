@@ -1,7 +1,7 @@
 # 03/06/25 - 
 ## When I added the clear button I broke my little project when I mass changed getElementById("input-area"), to a varible. This resulted in me calling document.inputArea.textContent within a particular line, causing the whole thing to error out. Fixed it quick though!
 
-Today's first problem is number of islands - https://neetcode.io/problems/count-number-of-islands
+### Today's first problem is number of islands - https://neetcode.io/problems/count-number-of-islands
 
 Not sure why this problem comes after the previous three or four problems, as I can immediately tell I'll be calling recusive functions and to search a grid. It's basically a super slimmed down version of either word search problem. 
 
@@ -14,12 +14,14 @@ The only real gotcha here is you can slightly improve the time by only performin
     
 -within my nested loops, and returned False if the coordinate was "0", or if r/c < 0 or r/c >= size of grid. I would return True at the end of the function, after the additional dfs' were run in each cell direction - N,S,E,W.
 
+### Today's second problem is clone graph - https://neetcode.io/problems/clone-graph
+
 
 
 # 02/06/25 - 
 ## My bosses and coworkers enjoyed the tool I made them, so I'm very pleased! I also just added clear button for the input field, as clearing it manually is a tiny bit annoying to me in practice. With that said, on to the real entry:
 
-Today's problem is Word Search II - https://neetcode.io/problems/search-for-word-ii
+### Today's problem is Word Search II - https://neetcode.io/problems/search-for-word-ii
 
 This is the matrimony of the trie problems and the Word Search backtracking problem. I think it took me longer than it should have to solve this, just because I'm kind of tired and unfocused this Monday afternoon. 
 
@@ -83,7 +85,7 @@ I also styled it to match our company colors, and I think the styling came out r
 
 
 # 30/05/25 -
-Today's problem is Design Add and Search Word Data Structure - https://neetcode.io/problems/design-word-search-data-structure
+### Today's problem is Design Add and Search Word Data Structure - https://neetcode.io/problems/design-word-search-data-structure
 
 The first half of this problem is exactly the same as yesterday's problem and I breeze through it, but then I got tripped up. The search function of this problem has to allow for "." to mean any letter of the alphabet and then continue. I knew right away that I had to solve this recursively, but I struggled implementing it at first. At first I wanted to loop through each of the root node's children and then recursively call a loop for each of the children, but I realized that you have to pass the root directly into the recursive call, and then make a pointer that points to the root and changes when you go further down the Trie. The first "gotcha" here is that if you have solved the previous problem you may be expecting for for...in loops, since every function in the last problem was built on one. You MUST use a for...in range() loop. When you first enter your recursive function you want to define your pointer as the highest node on the Trie you have access to, the one that was passed in via the function arguments. Then you want to jump straight into your loop. Once you jump into your loop you want to point to each character of the input word for each index of the loop, so you can immediately set:
 
@@ -133,7 +135,7 @@ Once you've defined your dfs, you can safely:
 
 
 # 29/05/25 - 
-Today's problem is Implement Trie - https://neetcode.io/problems/implement-prefix-tree
+### Today's problem is Implement Trie - https://neetcode.io/problems/implement-prefix-tree
 
 I like tries a lot and I think they are really cool. For the most part I remembered how to solve this offhand, but there are a few things that tripped me up that I'll talk about here so I can better commit them to memory.
 
@@ -152,9 +154,9 @@ Lastly, for searching by prefix, It's the exact same as above only instead of re
 
 
 # 28/05/25 - 
-I have decided that when I do a particularly challenging LeetCode problem, especially one's I can't solve on my own without hints or in a single attempt, I should write down some things I learned from going through the problem step by step.
+## I have decided that when I do a particularly challenging LeetCode problem, especially one's I can't solve on my own without hints or in a single attempt, I should write down some things I learned from going through the problem step by step.
 
-Today's problem is WordSearch - https://neetcode.io/problems/search-for-word
+### Today's problem is WordSearch - https://neetcode.io/problems/search-for-word
 
 I remembered from the last time I encountered this problem that I have to get the rows and columns of the board in some capacity. I found out that this is as simple as rows = len(board) and cols = len(board[0]). At first I thought this was getting the length of a secret created-under-the-hood array of all rows that have at least index 0 within them, but it is actually as simple as it seems. The length of rows are the number of items in the board array, and the length of cols in the number of items within the first item in the board array. Really, this problem should have a quadrilateral grid, so I could take the length of any of the arrays within the board array. If it wasn't guaranteed that all rows would have the same number of cols, I would have to add additional checks to avoid out of bounds errors.
 
