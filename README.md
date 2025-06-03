@@ -1,3 +1,67 @@
+# 02/06/25 - 
+My bosses and coworkers enjoyed the tool I made them, so I'm very pleased! I do need to remember to implement a clear button for the input field, as clearing it manually is a tiny bit annoying to me in practice. With that said, on to the real entry:
+
+Today's problem is Word Search II - https://neetcode.io/problems/search-for-word-ii
+
+This is the matrimony of the trie problems and the Word Search backtracking problem. I think it took me longer than it should have to solve this, just because I'm kind of tired and unfocused this Monday afternoon. 
+
+The first gotcha as discussed in other trie problems is that you have to define the trie class yourself, which here actually makes the problem a little bit easier to solve. We define our Trie children as this.children = {} as per uzh, but instead of defining this.end_of_word as a boolean, this time we are going to define it as this.words_index = -1 by default, and we will see why in a moment. 
+
+We go through each of our words, and we do the same thing we are used to as far as adding a word to the trie. For each character of the word we check if it is the child of our node, and if not we create a child node, and if so we move our current node down to our child node. However, at the end of each loop of characters, we define that last node.words_index as the index of the word respective to the words array. This way, every node has a wors_index of -1, except the nodes that signify the end of a word, which are labeled with the index of where we will find said word in the words array. It is for this reason that for our outer loop we must use an indexed for loop, and for our inner loop we can just use a for each loop. Make sure that you define a root node as root = TrieNode() outside of your loops, but for each index of your indexed loop, you are creating a clone of the root that by writing node = root. This way your root will contain every word in the words array. 
+
+Once we add all the words to our trie, we do the same as the first word search problem, and get the values or rows and columns, and set up our nested indexed for loops to loop through each coordinate in our grid. This time instead of returning True or False to just finding a single word in the grid, we just want to recursively search the whole grid for all of our words, and then return the array of words that were found. This means we need to set up self.res = [] and return this after we are done with our nested loops. We also need to set self.word = words to be able to access our words and our result array at any point during recursion.
+
+Now we are into the meat and potatoes, and we can define our recursive function. We want to pass in our row value, our column value, and the node who's children we are searching through:
+
+	def dfs(r, c, node):
+
+We do our checks to end the call early, which in my mind has 4 parts:
+	- make sure r and c are greater than 0
+ 	- make sure r and c are NOT greater than the length of any row or column
+  	- make sure we are not checking a square in the board we have already been to
+   	- and make sure the coordinate we are checking exists in the children of the current node
+    If all of these things are true, we can move on, otherwise we just return. Here's what the code looks like jsut for practice:
+
+    	if r < 0 or c < 0 or r >= len(board) or c >= len(board[0]) or board[r][c] != "#" or board[r][c] not in node.children:
+     		return
+
+Once we're passed that gauntlet of early termination, the code is ALMOST the same as the first word search problem, but with a few key differences. The first difference is that we can't just change our current coordinates value to "#" willy-nilly, we need to be able to return it to it's original value, but we don't have a letter index in a single word to reference this time, since we are checking multiple words at once. Therefore, we need to create a temporary variable to house the value of the coordinate we start at, in case we change it and need to change it back later. Once we have our temp variable assigned, we can go ahead and change our current coordinate to "#" so that we don't go over it again. The we change our node to it's child based on the coordinate on the board it's at. If we are on "A", and we are checking tile "T", we need to move from node "A" to node "T", before the next recursive call. Here is where we check if we have a word or not! If the current node's words_index is anything other than -1, we know we have a full word, and we can push that word into res by calling:
+
+	this.res.append(this.words[node.words_index]
+
+ Once we do so, it's important to now change this node's word_index to -1 so we don't add the same word twice. 
+
+ After all of that is said and done, we can go ahead and recurse into the top, bottom, left, and right squares from the current node, and then when we come out of the call, go ahead and set your coordinate back to it's original value.
+
+ The whole inner-guts here looks like this:
+
+ 	temp = board[r][c]
+  	board[r][c] = "#"
+  	node = node.children[temp]
+   	if node.words_index != -1:
+    		this.res.append(this.words[node.words_index]
+      		node.words_index = -1
+
+ 	dfs(r + 1, c, node)
+ 	dfs(r - 1, c, node)
+ 	dfs(r, c + 1, node)
+ 	dfs(r, c - 1, node)
+
+  	board[r][c] = temp
+   	
+And you're done! Just remember to actually return self.res at the end of your nested loops that run the recursive function on every square in the board. 
+
+
+
+# 31/05/25 -
+I completed and deployed a little problem that will help me out at work! You can find it here: aciextractor.onrender.com.
+
+All it is is something that skims a stream of text in one text are for a substring matching the syntax of our account numbers, and then if it does adds it to a string + "\n" for new line, and then keeps going until it finds all substrings of the string that match that condtion. The result is a bunch of account numbers separated by newlines, and you can input this string all at once into a software we use at work to look up all of the account numbers at once. It will definitely help me speed through things a little faster at work going foward.
+
+I also styled it to match our company colors, and I think the styling came out really nice! Probably the nicest looking website I've put out to date. I learned a few new HTML tags, like label, and I implemented a fancy little animation on the copy to clipboard button. The JavaScript itself is really simple, and I solved the condition of how to isolate the account numbers the same way I would've solved any LeetCode problem, and that's why I like LeetCode.
+
+
+
 # 30/05/25 -
 Today's problem is Design Add and Search Word Data Structure - https://neetcode.io/problems/design-word-search-data-structure
 
