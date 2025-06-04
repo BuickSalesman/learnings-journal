@@ -64,6 +64,9 @@ The last gotcha is that you use a ternary in case there are no nodes in the grap
 
 And you're done! Truly a crazy amount of mental gymnastics to understand just a little over ten lines of code. Hopefully this journal entry will help me figure this out easier and faster, next time.
 
+P.S.
+	After solving in JavaScript, it is worth noting that since we are storing objects in our map, we can not use a plain object since JavaScript forces object keys to be strings. We must use new Map() as our clone hash map, and change all the syntax to work around that. 
+
 
 
 # 02/06/25 - 
