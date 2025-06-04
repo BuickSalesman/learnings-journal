@@ -1,3 +1,42 @@
+# 04/06/25 -
+## A family member sent me a job listing from within their company. It's a senior level role requiring at least five years' experience. I figured she had an entry level job for me when she reached out. Not one to look a gift horse in the mouth, I'll still apply either way!
+### Today's problem is Course Schedule - https://neetcode.io/problems/course-schedule
+
+This problem makes sense to me, but I had to brush up on a lot of syntax to get this one done in both Python and JavaScript.
+
+I told myself not to overthink it at first, but I still did when I was drawing the problem out on paper. Sometimes I have issues trying to figure out how many arguments a depth first search needs. Normally it's fewer than I think, and I cheat a lot by just defining something I need to manipulate afterwards as a global variable, but I'm trying not to do that for this problem (not that I needed to in the end). 
+
+I started by drawing the courses out as graph nodes, with the required course pointing to the dependent course. It became clear to me I was going to have to put them into a map, with the dependent course as the key, and an array of prerequisites as the value. The first gotcha here is that you actually need a key for every course in numCourses. That is to say, numCourses is guaranteed by the problem's constraints to be at least greater than the highest value of your courses. So, even if you only have prerequisites = [[4,6]], your num courses will be 7 or greater. Therefore, even though you only have 2 courses in prerequisites, you still need a map with 7 keys (considering that 0 can be a course, which is probably for simplicities sake in this problem). 
+
+So we go about making a map of all values from 0 to numCourses - 1 (otherwise known as within the range of numCourses), and for each index set map[index] = []. Then we can loop through every course pairing in prerequisites, and append the prerequisite to the empty array of its respective course key. I had to brush up on my iterable syntax for both my JavaScript and Python solutions for this problem. This code looks like:
+
+   In Python:
+
+	for course, prerequisite in prerequisites:
+ 		map[course].append(prerequisite)
+   
+   In JavaScript:
+
+    	for (let [course,prerequisite] of prerequisites){
+     	    map[course].push(prerequisite)
+	}
+
+Yay! Now we finally have a map of courses, and all of the course prerequisites are the key-courses value. 
+
+The second gotcha here, is we need to use another map as a set! Two maps in one problem! Oh the agony!
+
+We need to use this set to be able to keep track of which courses we have already visited throughout our dfs. A key condition here will be if we have already visited a node during one dfs, that indicated that a cycle has been found, and we have to return False for the whole shebang. The other condition will be if we are visiting a course, and the course has no prerequisites in our map, we can return True, because we know there is definitely no cycle, with no prerequisites. If neither of these conditions are satisfied, we can recurse further into our dfs, but we can't do that without adding our current course to our set. I know that sets are built-in in both JavaScript and Python, but they come with extra syntax to remember, so I typically implement a “poor man’s set” by creating a map with each value as a key and setting that key’s value to True. 
+
+Once we add our current course into our set, we have to run a dfs on each of its prerequisites for cycle detection. If one of those prerequisites detects a cycle and returns False, we bubble that False all the way to the top and the answer to the whole function will be False. If we make it through all of those dfs' however, we can go ahead and clear out all of the prerequisites for that course from our map, and remove our current course from our set. After that is all said and done, and we've finished every possible dfs of our given course without returning False, we can finally return True at the very end of our function.
+
+We clear our courses requirements in our map, and remove our course from our set, per dfs call, because we don't want to do repeat work. This tripped me up initially because, intuitively, I thought I would be using a single dfs to traverse the whole of the courses at once. That's not the case! The courses aren't even guaranteed to be connected! Doi! So we instead have to call a dfs on every value from 0 to numCourses - 1, and check every possible course, even if that course is not in our list of prerequisites. 
+
+Our check to see if our prerequisites are equal to [] ensures that we don't do extra work, because in our earlier example of prerequisites = [[4,6]], for courses 0 - 3 (and 5) we end our dfs immediately and return True, as those courses would by default have no prerequisites. If we did, for example, have our prerequisites as [[1,2][2,3][2,4]], we would have checked all the prerequisites of course 2, when we checked the prerequisites of course 1. So on our dfs call on course 1, we want to make sure we set the prerequisites of course 2 to be an empty array, as we know that course two can be completed without a cycle. That way, when we move from course 1 to course 2 in our loop, and we call our dfs on course 2, we see that its prerequisites are empty and stop the call there immediately. 
+
+All of that being said, the last thing we need to do is loop through each course, calling dfs on each, and if any of those dfs' return False, we return False to our solution. Otherwise, at the end of that loop, we can safely return True. And we're done!
+
+
+
 # 03/06/25 - 
 ## When I added the clear button I broke my little project when I mass changed getElementById("input-area"), to a varible. This resulted in me calling document.inputArea.textContent within a particular line, causing the whole thing to error out. Fixed it quick though!
 
