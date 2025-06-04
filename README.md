@@ -16,6 +16,54 @@ The only real gotcha here is you can slightly improve the time by only performin
 
 ### Today's second problem is clone graph - https://neetcode.io/problems/clone-graph
 
+Alright buckle up because this one sucked!!!!
+
+It took me forever to really understand what was going on here. At first I thought I was literally working with a list to be manipulated, but that was short lived when I saw that the input to the function is just a single node in the graph. Then I thought I just had to make and return a list of all of the neighbors of each node in order, and then recursively go through each node.neighbors array to add them all to an array. If that doesn't make sense when you read it, you would be correct! I knew I had to make a hash table, and then I was struggling on what actually went into the hash table! Is is the object itself with all of its properties? That wouldn't make sense because you would be recursively adding neighbors ad infinitum just to store the original object in the first entry in the hash table. Is it literally just the value and the neighbors array? Also no! Because then you can't actually point to the node object.
+
+I had to think about two things I learned in Jay Wengrow's Common Sense Guide to DSA:
+- Pretend a computer's memory is a system of cubbies labeled 0-99. You can jump to any of these cubbies, and look inside. Inside could be a string, an object, an array, an integer, etc.
+- Think of a linked list as data structure that takes up one of these cubbies. Half of that cubby is used to store that value of the list item, and the other half of that cubby is used to store the address of the next list item. Together these two halves of this cubby form one "node".
+In this example, if you had a node at cubby 10, that pointed to cubby 16, cubby 10's pointer to cubby 16 does not contain the contents of cubby 16, it only tells you where to look for those contents.
+
+We can extend this to imagine the nodes of our graphs as objects living in a particular cubby, but instead of having 1 pointer to the next cubby address, they can have multiple pointers to multiple cubby addresses. 
+
+So really, when you are making your hash map, you are assigning the key as the whatever is found living in original node's cubby address, and the value as whatever is living at the cloned node's cubby address. 
+
+From here on out I will be using the term memory address to mean cubby address. 
+
+The way I had to think about it was like this:
+1) We enter our dfs in which we pass the memory address of the first node of the graph.
+2) If this memory address already exists as a key in our hash map, we immediately return the value of that memory address. This value will be a cloned node's memory address.
+3) If this memory address doesn't exist, we create a new node at a new memory address and store that in a variable called copy. This new copy's value is the same as the node passed in to the dfs' value. It will have no neighbors to start, so neighbors = [].
+4) We then set the memory address of the copy as the value to the memory address of the passed in node's key, in our hash map. e.g. clones[node] = copy
+5) For each memory address in node.neighbors, we recurse to get (or create) the neighbors clone, and append that memory address to clone.neighbors.
+6) After all the dfs-ing and cloning is complete, we return the memory address to copy, which now can be looked inside and the data found within can be used to traverse the entire graph of clones, because all pointers have been set.
+
+In the end, if our original nodes were memory addresses 0, 1, and 2, and our clones were created at memory addresses 3, 4, and 5, our hash map would simply look like this:
+	
+ 	{object who lives at memory address 0 : object who lives at memory address 3,
+  	 object who lives at memory address 1 : object who lives at memory address 4,
+    	 object who lives at memory address 2 : object who lives at memory address 5}
+
+The last gotcha is that you use a ternary in case there are no nodes in the graph as an edge case. When you put everything together, the full code looks like this:
+
+    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
+        clones = {}
+
+        def dfs(node):
+            if node in clones:
+                return clones[node]
+
+            copy = Node(node.val)
+            clones[node] = copy
+            for neighbor in node.neighbors:
+                copy.neighbors.append(dfs(neighbor))
+            return copy
+
+        return dfs(node) if node else None
+
+And you're done! Truly a crazy amount of mental gymnastics to understand just a little over ten lines of code. Hopefully this journal entry will help me figure this out easier and faster, next time.
+
 
 
 # 02/06/25 - 
