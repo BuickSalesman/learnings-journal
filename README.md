@@ -33,7 +33,7 @@ From here on out I will be using the term memory address to mean cubby address.
 
 The way I had to think about it was like this:
 1) We enter our dfs in which we pass the memory address of the first node of the graph.
-2) If this memory address already exists as a key in our hash map, we immediately return the value of that memory address. This value will be a cloned node's memory address.
+2) If this memory address already exists as a key in our hash map, we immediately return the value of that memory address. This value will be a cloned node's memory address, and we don't want to visit the same memory address twice!
 3) If this memory address doesn't exist, we create a new node at a new memory address and store that in a variable called copy. This new copy's value is the same as the node passed in to the dfs' value. It will have no neighbors to start, so neighbors = [].
 4) We then set the memory address of the copy as the value to the memory address of the passed in node's key, in our hash map. e.g. clones[node] = copy
 5) For each memory address in node.neighbors, we recurse to get (or create) the neighbors clone, and append that memory address to clone.neighbors.
