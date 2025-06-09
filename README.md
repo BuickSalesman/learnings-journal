@@ -1,3 +1,77 @@
+# 09/06/2025 - 
+## I started a fun little project over the weekend. It's a desktop application in Electron that also uses Matter.js. It's not been a smooth journey so far but I am excited to unveil what it is in the near future here.
+### Today's problem is Number of Connected Components In An Undirected Graph - https://neetcode.io/problems/count-connected-components
+
+I know that you can solve this problem using Disjoint Set Union, but it seems too complicated for the problem at hand and I've never used it before, so I elected to solve it using what I know - depth first search. 
+
+This is a pretty easy solution for a pretty convolutedly worded problem. The first thing to note here is that you will always have nodes 0 through n - 1. That means you will always start at 0 for your first node, and you will only have nodes that increment by 1, up until n - 1, since n is effectively the number of nodes you have in your graph. This makes indexing really easy and we can use a few tricks to make this problem a lot easier than it would be otherwise.
+
+The first of these tricks is going using an array as a set, with each index at first set to "False", to keep track of which nodes we have already visited. We initialize this array to be the length of n, so that effectively each index represents 1 of our nodes. Whenever we visit a node, we flip its index to True so we can avoid it in the future. 
+The second of these tricks is we are going to make an adjacency list, where each index of our adjacency list is an array of nodes that correspond to edges of the respective index's node. That means if we have ```edges = [0,1], [0,2], [0,3]```, our adjacency list will look like ```[1, 2, 3], [0], [0], [0]```. We do this by looping over each pair of edges in our edges array, and we append the first_value to adjacency_list[second_value], and our second_value to adjacency_list[first_value]. 
+
+Before we write the code for our dfs, we are going to look at how we are actually going to call our dfs, and what we want it to do. We want to run a dfs on every node that we have not visited yet (which at the start will be all of them), so that we can check what other nodes each node is connected to. If we make it through a dfs, we can increase our number of connected components by 1, as that means we have traversed every connected node in a particular cluster. If all nodes are connected, we will have visited every node in our first dfs, and we will only increase our result by 1, meaning that our result will be 1. If we have 5 nodes, and none of them are connected (that would mean our edges input array is totally empty), we will in turn have to call a separate dfs on each different node, and our result will be 5. By definition of the problem, your result will never be less than 1. 
+
+So we want to loop over each node, and if the node has not been visited, we set that node's index in our visited array to True, and then dfs(node). Here's what that looks like:
+
+	for node in range(n):
+ 		if not visited[node]:
+   			visited[node] = True
+      			dfs(node)
+	 		result += 1
+
+Now let's take a look at actually writing out our dfs. When we pass in a node, we want to recursively call dfs on every node in it's adjacency list. If we pass in node 0 from the above adjacency list example, we want to run a dfs on node 1, 2, and 3, since those are the members of it's adjacency list. All of this of course, is if we have not visited this node yet, so that we can avoid extra work. If we have already visited a node, by definition we already know it is a member of the cluster we are currently searching. When we eventually have no more nodes to search, we can bubble back up to the beginning of our call stack and move on, confident that each node we searched is part of a single cluster. We increase our result once we have finished our dfs within our main loop, and we don't start another dfs again unless we encounter a node that we have not visited yet, which means that it is part of a new cluster of nodes, not connected to any others we have found so far. This is what I'm describing in code form:
+
+	def dfs(node):
+ 		for connected_node in adjacency_list[node]:
+   			if not visited[connected_node]:
+      				visited[connected_node] = True
+	  			dfs(connected_node)
+
+The key thing to remember here is once we flip from False to True in our visited array, we won't ever be visiting that node again. This way we can effectively count the number of connected components in our graph in linear time, without any repeated work. 
+
+Here's the full code in JavaScript:
+
+```
+class Solution {
+  /**
+   * @param {number} n
+   * @param {number[][]} edges
+   * @returns {number}
+   */
+  countComponents(n, edges) {
+    let res = 0;
+    let adj = Array.from({ length: n }, () => []);
+    let visited = Array.from({ length: n }, () => false);
+
+    for (const [a, b] of edges) {
+      adj[a].push(b);
+      adj[b].push(a);
+    }
+
+    const dfs = (node) => {
+      for (let edge of adj[node]) {
+        if (!visited[edge]) {
+          visited[edge] = true;
+          dfs(edge);
+        }
+      }
+    };
+
+    for (let node = 0; node < n; node++) {
+      if (!visited[node]) {
+        visited[node] = true;
+        dfs(node);
+        res++;
+      }
+    }
+
+    return res;
+  }
+}
+```
+
+
+
 # 04/06/25 -
 ## A family member sent me a job listing from within their company. It's a senior level role requiring at least five years' experience. I figured she had an entry level job for me when she reached out. Not one to look a gift horse in the mouth, I'll still apply either way!
 ### Today's problem is Course Schedule - https://neetcode.io/problems/course-schedule
