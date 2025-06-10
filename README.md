@@ -1,4 +1,46 @@
-# 09/06/2025 - 
+# 10/06/25 -
+### Today's problem is Climbing Stairs - https://neetcode.io/problems/climbing-stairs
+
+Climbing stairs is the Fibonacci Sequence dsiguised as a dynamic programming word problem. The wording is supposed to distract you from the fact that the problem just wants you to code the Fibonacci Sequence. If you want to write the Fib Seq, you can just write this:
+
+	a, b = 1, 1
+ 	for _ in range(n - 1):
+  		a, b = b, a + b
+    	return b
+
+That's all good and fine if you just want to write that out and pass the problem, but I forced myself to sit down for 2 hours and figure out a way that this problem would actually make sense to me as a word problem that has to do with stairs, to help me in the future when I actually have to turn real world problems into code under pressure, or at least let me understand how to actually _THINK_ about the problem. 
+
+It helped me a lot to shift from thinking about this problem as a for loop (especially when we don't use the index for anything), to thinking about this as a while loop. It also helped me to stop thinking as "n" as the top of the staircare, but more as a target step in a potentially infinite staircase. 
+
+#### If we want to find the number of ways to reach a target step, we climb the staircase until we are one step above the target step, and return the number of ways we can get to the step one below the step we are currently standing on. 
+
+We also only need to do this if our target step is step 2 or higher. As we know, if our options are either going 1 or 2 steps at a time, we can't take 2 steps to get to step 1, so therefore there is only one way to get to step 1. There's also only 1 way to get to the ground. The problem tells you up front your target step will be step 1 or higher. 
+
+Time for a vocabulary lesson! Avid readers may know of the word "penultimate". I first learned it from the title of Lemony Snickett's 12th entry of ASoUE. "Penultimate" means "the second to last entry in a sequence". Etymology fans may recognize the root word "ultimate" within "prenultimate", and you would be correct in thinking that the ultimate entry in a sequence is the last entry in a sequence. It should stand to reason then, that there should be a word for "third to last entry in a sequence", as that's often something we might want to know if we are concerned about the last, and second to last entries in a sequence. That word does in fact exist! That word exists to my knowledge for every entry in our imaginary sequence down to the fifth-from last. The fifth from last entry in a sequence is the propreantepenultimate entry. You would hardly ever use this word, but I do find ultimate, penultimate, and antepenultimate to be useful in my every day life, rather than saying "second from the last". It is in this problem where I have found these words to make an extrordinary difference in my understanding of the task at hand. 
+
+Currently, as we have the problem initialized pre-loop, our "ultimate" step is 2 (though that will change after the loop), our penultimate step is 1, and our antepenultimate step is 0. There is one way to get to the penultimate step to our current ultimate step, and there is one way to get to our antepenultimate step to our current ultimate step. This is what that looks like:
+
+	ultimate_step = 2
+ 	ways_to_penultimate = 1 
+  	ways_to_antepenultimate = 1 
+   	target_step = n
+
+Now we want to climb steps. We climb steps with a loop that runs until we have climbed one more step than our target:
+
+	while ultimate_step <= target step:
+ 		ultimate_step += 1 # At the end of our final loop, our "step" will be one step higher than our target, so we should always return the number of ways to the penultimate step. 
+   		ways_to_preantepenultimate = ways_to_antepenultimate
+     		ways_to_antepenultimate = ways_to_penultimate
+       		ways_to_penultimate = ways_to_preantepenultimate + ways_to_antepenultimate
+	 return ways_to_penultimate
+
+Each time our loop runs, we bring ourselves up a step, which is effectively the same thing as shifting all of our variables back one. Our antepenultimate step (third to last) becomes our preantepenultimate step (fourth to last), our penultimate step (second to last) becomes our antepenultimate step (third to last), and our ultimate (current) step becomes our penultimate (second to last) step. The number of ways there are to reach our penultimate step is the sum of the ways there are to reach our preantepenultimate step and our antepenultimate step. This is because the only way to get to our penultimate step is to take 1 step from the antepenultimate step, or to take 2 steps from the preantepenultimate step.
+
+Who knows if this is even helpful to anyone but me. Maybe it's just worth memorizing how to code a Fibonacci Sequence. For what it's worth, if you can only take one or two steps step(i) = step(i-1) + step(i - 2). If you can take 3 steps at a time, it's step(i) = step(i-1) + step(i - 2) + step(i-3), and etc for longer step-gaps. 
+
+
+
+# 09/06/25 - 
 ## I started a fun little project over the weekend. It's a desktop application in Electron that also uses Matter.js. It's not been a smooth journey so far but I am excited to unveil what it is in the near future here.
 ### Today's problem is Number of Connected Components In An Undirected Graph - https://neetcode.io/problems/count-connected-components
 
