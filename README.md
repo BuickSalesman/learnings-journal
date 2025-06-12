@@ -1,3 +1,9 @@
+# 12/06/25 -
+## I'm almost ready to unveil the MVP of my recent project. It's been so much fun to code on my own, and dig through the documentation of 3 differen't libraries and string them all together. 
+### Today's problems are House Robber - https://neetcode.io/problems/house-robber and House Robber II - https://neetcode.io/problems/house-robber-ii
+
+
+
 # 10/06/25 -
 ### Today's problem is Climbing Stairs - https://neetcode.io/problems/climbing-stairs
 
