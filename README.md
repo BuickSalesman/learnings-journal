@@ -23,12 +23,13 @@ To write this in the least amount of code, such as the Fibonacci Sequence in the
 
 Since the objective of this journal is to enforce learning, here's how I wrote the code in a way that makes sense to me:
 
-	prev_prev_max, prev_max, true_max = 0, 0, 0
- 	for i in range(nums):
-  		true_max = max(prev_prev_max + nums[i], prev_max)
-    		prev_prev_max = prev_max
-      		prev_max = true_max
-	return true_max
+	def rob(self, nums):
+		prev_prev_max, prev_max, true_max = 0, 0, 0
+	 	for i in range(nums):
+	  		true_max = max(prev_prev_max + nums[i], prev_max)
+	    		prev_prev_max = prev_max
+	      		prev_max = true_max
+		return true_max
 
 Let's walk through this code super quickly!
 
@@ -37,7 +38,33 @@ First we initialize our variables for the house two houses back, and the house o
 When we stop at the first house and look inside to see the loot, and calculate our true maximum loot to be the loot from the house, plus the loot from the house 2 houses ago (n + 0). We then "move up" the maximum loot from two houses ago to be the house from one house ago in preparation for our next loop. Note that this does not affect the true maximum. Finally, we set the maximum loot from one house ago to our current maximum loot, also in preparation for the next loop. 
 
 We then move on to our second house. We look inside to see what loot awaits us, and check if the loot from this house + the maximum total loot up until and including the house from two houses ago is greater than the total maximum loot up until and including the house from one house ago. If the max total loot up to and including the house from one house house ago is greater than what our total loot would be robbing this current house + the maximum loot up until and including two houses ago, then we decided to skip this current house, and our total loot stays the same. The total loot up until and including the house two houses ago is "moved up" to be the total loot up until and including the house one house ago, in preparation for our next loop, and our total loot up until and including the house from one house ago is still our maximum loot going into the next loop. 
-####It is this distiction of being able to keep our maximum loot the same value for up 3 houses in a row that allows us to, at times, skip 2 houses, if there happen to be two particulary lucrative houses stationed with two not-so-lucrative houses in between them. 
+####It is this distiction of being able to keep our maximum loot the same value for up 3 houses in a row that allows us to, at times, skip 2 houses, if there happen to be two particulary lucrative houses stationed with two not-so-lucrative houses in between them.
+
+Finally, at the end of the loop we return the true maximum. I find this to have slightly more explicit meaning than returning prev_max (or b in the F.S. example). And we're done! 
+
+Now for House Robber II. The problem is the exact same, but now the houses are in a circle! So we can't rob the first house in the list and also rob the last house in the list, because now those houses are _neighbors_. 
+
+Well the key to solving this one is exactly in the sentence I just typed above:
+
+####"If my maximum total includes the first house, then it can not include the last house, and vice versa."
+
+The simple trick to this is finding two maximum loot paths, one for our array of houses not including the last house, and one for our array of houses not including the first house. That way these paths can NEVER contain the first and last house together, no matter if our array length is odd or even. 
+
+This is as simple as passing our rob function into our new function:
+
+	def robCircle(self, rob, nums):
+ 		return max(rob(nums[:-1]), rob(nums[1:]))
+
+The only catch here is that if you array only has one entry, you'll slice it off pass an empty array into your rob function. You can guard against this by adding `nums[0]` as an argument in your max() function, or up front like this:
+
+	def robCircle(self, rob, nums):
+ 		if len(nums) == 1:
+   			return nums[0]
+ 		return max(rob(nums[:-1]), rob(nums[1:]))
+
+I prefer the above example if only for a little bit of extra clarity that a single-value array _COULD_ happen.
+
+It's been a really tough couple of days actually wrapping my full mind around these basic of dynamic programming, but at least for these three problems I think I have a solid understanding for life now.
 
 
 
