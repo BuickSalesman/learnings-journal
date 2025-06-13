@@ -2,6 +2,23 @@
 ## I'm almost ready to unveil the MVP of my recent project. It's been so much fun to code on my own, and dig through the documentation of 3 differen't libraries and string them all together. 
 ### Today's problems are House Robber - https://neetcode.io/problems/house-robber and House Robber II - https://neetcode.io/problems/house-robber-ii
 
+These two problems are a slight variation from the Climbing Stairs problem discussed in the last journal entry. I was very dissapointed in myself when I did not even consider to solve it the same way I solved Climbing Stairs, especially after spending so much time unpacking and journaling about Climbing Stairs. After taking the time to fully understand both of these problems though, and journaling in this entry about how they work, I feel like I now have a full understanding of 1/2 step cadence in dynamic programming problems.
+
+They key gotcha here is that not all paths are valid. Each path is weighted by the maximum amount of money we can make by either robbing the current house we are at, or skipping the current house we are at. This is decided by asking: 
+
+#### "If I rob the current house, is the sum of the current house's loot plus the total sum of the loot calculated at the house 2 houses back greater than the sum of the loot calculated at one house back?"
+
+In other words: 
+
+	totalLoot[house] = max(totalLoot[house - 2] + loot[house], totalLoot[house - 1])
+
+Where loot is an array of loot (integers) within a house, and house is the index of the loot array. 
+
+To write this in the least amount of code, such as the Fibonacci Sequence in the last example:
+
+	a, b = 0, 0
+ 	for _ in range(n-1)
+
 
 
 # 10/06/25 -
@@ -10,7 +27,7 @@
 Climbing stairs is the Fibonacci Sequence dsiguised as a dynamic programming word problem. The wording is supposed to distract you from the fact that the problem just wants you to code the Fibonacci Sequence. If you want to write the Fib Seq, you can just write this:
 
 	a, b = 1, 1
- 	for _ in range(n - 1):
+ 	for _ in range(n - 1): # It is worth noting that since we start with the first value already completed and are starting from the second number in the sequence, we run our loop once less than the input number.
   		a, b = b, a + b
     	return b
 
