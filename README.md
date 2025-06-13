@@ -17,7 +17,27 @@ Where loot is an array of loot (integers) within a house, and house is the index
 To write this in the least amount of code, such as the Fibonacci Sequence in the last example:
 
 	a, b = 0, 0
- 	for _ in range(n-1)
+ 	for num in nums:
+  		a, b = max(b, a + num)
+    	return b
+
+Since the objective of this journal is to enforce learning, here's how I wrote the code in a way that makes sense to me:
+
+	prev_prev_max, prev_max, true_max = 0, 0, 0
+ 	for i in range(nums):
+  		true_max = max(prev_prev_max + nums[i], prev_max)
+    		prev_prev_max = prev_max
+      		prev_max = true_max
+	return true_max
+
+Let's walk through this code super quickly!
+
+First we initialize our variables for the house two houses back, and the house one house back, to 0, as that would be our maximum if we have not robbed any house so far. We also set the value of our true maximum loot to 0, for the same reason. 
+
+When we stop at the first house and look inside to see the loot, and calculate our true maximum loot to be the loot from the house, plus the loot from the house 2 houses ago (n + 0). We then "move up" the maximum loot from two houses ago to be the house from one house ago in preparation for our next loop. Note that this does not affect the true maximum. Finally, we set the maximum loot from one house ago to our current maximum loot, also in preparation for the next loop. 
+
+We then move on to our second house. We look inside to see what loot awaits us, and check if the loot from this house + the maximum total loot up until and including the house from two houses ago is greater than the total maximum loot up until and including the house from one house ago. If the max total loot up to and including the house from one house house ago is greater than what our total loot would be robbing this current house + the maximum loot up until and including two houses ago, then we decided to skip this current house, and our total loot stays the same. The total loot up until and including the house two houses ago is "moved up" to be the total loot up until and including the house one house ago, in preparation for our next loop, and our total loot up until and including the house from one house ago is still our maximum loot going into the next loop. 
+####It is this distiction of being able to keep our maximum loot the same value for up 3 houses in a row that allows us to, at times, skip 2 houses, if there happen to be two particulary lucrative houses stationed with two not-so-lucrative houses in between them. 
 
 
 
@@ -30,7 +50,7 @@ Climbing stairs is the Fibonacci Sequence dsiguised as a dynamic programming wor
  	for _ in range(n - 1): 
   		a, b = b, a + b
     	return b
-	# It is worth noting that since we start with the first value already completed and are starting\n from the second number in the sequence, we run our loop once less than the input number.
+	# It is worth noting that because we start with the first value already completed and are thus starting  our loop from the second number in the sequence, we run our loop once less than the input number.
 
 That's all good and fine if you just want to write that out and pass the problem, but I forced myself to sit down for 2 hours and figure out a way that this problem would actually make sense to me as a word problem that has to do with stairs, to help me in the future when I actually have to turn real world problems into code under pressure, or at least let me understand how to actually _THINK_ about the problem. 
 
