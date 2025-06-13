@@ -27,9 +27,10 @@ To write this in the least amount of code, such as the Fibonacci Sequence in the
 Climbing stairs is the Fibonacci Sequence dsiguised as a dynamic programming word problem. The wording is supposed to distract you from the fact that the problem just wants you to code the Fibonacci Sequence. If you want to write the Fib Seq, you can just write this:
 
 	a, b = 1, 1
- 	for _ in range(n - 1): # It is worth noting that since we start with the first value already completed and are starting from the second number in the sequence, we run our loop once less than the input number.
+ 	for _ in range(n - 1): 
   		a, b = b, a + b
     	return b
+	# It is worth noting that since we start with the first value already completed and are starting\n from the second number in the sequence, we run our loop once less than the input number.
 
 That's all good and fine if you just want to write that out and pass the problem, but I forced myself to sit down for 2 hours and figure out a way that this problem would actually make sense to me as a word problem that has to do with stairs, to help me in the future when I actually have to turn real world problems into code under pressure, or at least let me understand how to actually _THINK_ about the problem. 
 
