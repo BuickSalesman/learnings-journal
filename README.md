@@ -1,3 +1,30 @@
+# 17/06/25 - 
+## MVP of my bouncy ball project is almost done! All I need to do now is figure out a good way to move Matter bodies underlaid on the bottom of windows. 
+### Today's problem is Maximum Subarray - https://neetcode.io/problems/maximum-subarray
+
+Honestly, this problem wasn't too hard for me, but I did run into a couple of gotchas that I thought I would talk about here in hopes that I can solve them faster next time.
+
+The general idea is that you maintain a sliding window, and maintain the sum of all values in the sliding window. You also maintain the maximum value seen thus far out of all of your sliding window sums, as you iterate through your array of numbers. That is the problem _in spirit_. However, you don't actually have to maintain a left and right pointer, or a window at all. The idea is that because **YOU HAVE POSITIVE AND NEGATIVE NUMBERS**, as you move through all of your numbers tracking the sum of the numbers you have seen so far, if you encounter enough negative numbers that your total sum drops below 0, then your maximum subarray cannot contain the numbers you have seen so far, since their sum is a net negative. 
+
+The caveat to this is if you have an array of all negative numbers. If you have all negative numbers, your maximum subarray will only have one number in it, the greatest negative number. To protect against this, we do not look for if our sum has dropped below 0, but instead we look for if the individual number we are looking at in our array of numbers, is greater than the sum of our current total plus the number we are currently looking at. For `[-2, -1]`, we start by looking at `-2`, and set our `current_sum = -2`, and our `max_sum = -2`. We then move on to `-1`, and then ask is `-1 > current_sum + -1`, and the answer is yes, so our `max_sum = -1` as our `max_sum = max(curent_sum, max_sum`. This works well on the inverse because if we have `[2, 1]`, on first iteration our `current_sum = max_sum = 2`, and on second iteration we ask is `1 > curren_sum + 1`, and that is not true, so our `current_sum = 3` and our `max_sum = 3`. 
+
+The only other thing I guarded against in particular with this is if our array only has one number in it. You could loop through the single-digit array and set the `current_sum` and `max_sum` to `nums[0]`, but I instead initialized `current_sum = max_sum = nums[0]` from the jump, and iterated starting at index 1. This is mainly a leftover relic from how I initially solved the problem incorrectly, but I kept it because it is ever so slightly faster to just skip the loop and return the value of `nums[0]` than actually go into the loop. 
+
+The Python code is below, I've only included it because it is breif.
+
+	cur_sum = max_sum = nums[0]
+
+        for i in range(1, len(nums)):
+            cur_sum = max(nums[i], cur_sum + nums[i])
+            max_sum = max(max_sum, cur_sum)
+
+        return max_sum
+
+
+And you're done!
+
+
+
 # 12/06/25 -
 ## I'm almost ready to unveil the MVP of my recent project. It's been so much fun to code on my own, and dig through the documentation of 3 differen't libraries and string them all together. 
 ### Today's problems are House Robber - https://neetcode.io/problems/house-robber and House Robber II - https://neetcode.io/problems/house-robber-ii
